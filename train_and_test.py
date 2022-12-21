@@ -1,5 +1,6 @@
 import time
 import torch
+from torchmetrics.functional import f1_score, recall, precision
 
 from helpers import list_of_distances, make_one_hot
 
@@ -20,6 +21,9 @@ def _train_or_test(model, dataloader, optimizer=None, class_specific=True, use_l
     # separation cost is meaningful only for class_specific
     total_separation_cost = 0
     total_avg_separation_cost = 0
+
+    all_predictions = []
+    all_targets = []
 
     for i, (image, label) in enumerate(dataloader):
         input = image.cuda()
@@ -79,6 +83,9 @@ def _train_or_test(model, dataloader, optimizer=None, class_specific=True, use_l
             total_separation_cost += separation_cost.item()
             total_avg_separation_cost += avg_separation_cost.item()
 
+            all_predictions.append(predicted)
+            all_targets.append(target)
+
         # compute gradient and do SGD step
         if is_train:
             if class_specific:
@@ -108,6 +115,17 @@ def _train_or_test(model, dataloader, optimizer=None, class_specific=True, use_l
 
     end = time.time()
 
+    all_predictions = torch.cat(all_predictions)
+    all_targets = torch.cat(all_targets)
+    metrics = {}
+    metrics['acc'] = n_correct / n_examples
+    metrics['f1'] = f1_score(all_predictions, all_targets).item()
+    metrics['recall'] = recall(all_predictions, all_targets).item()
+    metrics['precision'] = precision(all_predictions, all_targets).item()
+    metrics['ce_loss'] = total_cross_entropy / n_batches
+    metrics['cluster_loss'] = total_cluster_cost / n_batches
+    metrics['separation_loss'] = total_separation_cost / n_batches
+
     log('\ttime: \t{0}'.format(end -  start))
     log('\tcross ent: \t{0}'.format(total_cross_entropy / n_batches))
     log('\tcluster: \t{0}'.format(total_cluster_cost / n_batches))
@@ -115,13 +133,14 @@ def _train_or_test(model, dataloader, optimizer=None, class_specific=True, use_l
         log('\tseparation:\t{0}'.format(total_separation_cost / n_batches))
         log('\tavg separation:\t{0}'.format(total_avg_separation_cost / n_batches))
     log('\taccu: \t\t{0}%'.format(n_correct / n_examples * 100))
+    log('\tf1: \t\t{0}%'.format(metrics['f1'] * 100))
     log('\tl1: \t\t{0}'.format(model.module.last_layer.weight.norm(p=1).item()))
     p = model.module.prototype_vectors.view(model.module.num_prototypes, -1).cpu()
     with torch.no_grad():
         p_avg_pair_dist = torch.mean(list_of_distances(p, p))
     log('\tp dist pair: \t{0}'.format(p_avg_pair_dist.item()))
 
-    return n_correct / n_examples
+    return metrics
 
 
 def train(model, dataloader, optimizer, class_specific=False, coefs=None, log=print):

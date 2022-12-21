@@ -7,9 +7,9 @@ def makedir(path):
     if not os.path.exists(path):
         os.makedirs(path)
 
-datasets_root_dir = './datasets/cub200_cropped/'
-dir = datasets_root_dir + 'train_cropped/'
-target_dir = datasets_root_dir + 'train_cropped_augmented/'
+datasets_root_dir = '/home/harishbabu/data/Fish/phylo-VQVAE/'
+dir = datasets_root_dir + 'train_padded_256/'
+target_dir = datasets_root_dir + 'train_padded_256_augmented/'
 
 makedir(target_dir)
 folders = [os.path.join(dir, folder) for folder in next(os.walk(dir))[1]]

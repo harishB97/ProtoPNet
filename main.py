@@ -137,23 +137,41 @@ from settings import num_train_epochs, num_warm_epochs, push_start, push_epochs
 # train the model
 log('start training')
 import copy
+import pandas as pd
+metrics_df = pd.DataFrame()
+results_dir = os.path.join(model_dir, 'results')
+makedir(results_dir)
 for epoch in range(num_train_epochs):
     log('epoch: \t{0}'.format(epoch))
 
     if epoch < num_warm_epochs:
         tnt.warm_only(model=ppnet_multi, log=log)
-        _ = tnt.train(model=ppnet_multi, dataloader=train_loader, optimizer=warm_optimizer,
+        train_metrics = tnt.train(model=ppnet_multi, dataloader=train_loader, optimizer=warm_optimizer,
                       class_specific=class_specific, coefs=coefs, log=log)
     else:
         tnt.joint(model=ppnet_multi, log=log)
         joint_lr_scheduler.step()
-        _ = tnt.train(model=ppnet_multi, dataloader=train_loader, optimizer=joint_optimizer,
+        train_metrics = tnt.train(model=ppnet_multi, dataloader=train_loader, optimizer=joint_optimizer,
                       class_specific=class_specific, coefs=coefs, log=log)
 
-    accu = tnt.test(model=ppnet_multi, dataloader=test_loader,
+    test_metrics = tnt.test(model=ppnet_multi, dataloader=test_loader,
                     class_specific=class_specific, log=log)
-    save.save_model_w_condition(model=ppnet, model_dir=model_dir, model_name=str(epoch) + 'nopush', accu=accu,
+    save.save_model_w_condition(model=ppnet, model_dir=model_dir, model_name=str(epoch) + 'nopush', accu=test_metrics['acc'],
                                 target_accu=0.70, log=log)
+    
+    train_metrics = {'train_'+key : val for key, val in train_metrics.items()}
+    test_metrics = {'test_'+key : val for key, val in test_metrics.items()}
+
+    # if metrics_df is None:
+    #     metrics_df = pd.DataFrame.from_dict({'ep':epoch, **train_metrics, **test_metrics})
+    # else:
+    #     metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+
+    metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+    try:
+        metrics_df.to_csv(os.path.join(results_dir, 'metrics.csv'))
+    except:
+        print('Unable to save metrics.csv')
 
     if epoch >= push_start and epoch in push_epochs:
         push.push_prototypes(
@@ -169,21 +187,27 @@ for epoch in range(num_train_epochs):
             proto_bound_boxes_filename_prefix=proto_bound_boxes_filename_prefix,
             save_prototype_class_identity=True,
             log=log)
-        accu = tnt.test(model=ppnet_multi, dataloader=test_loader,
+        test_metrics = tnt.test(model=ppnet_multi, dataloader=test_loader,
                         class_specific=class_specific, log=log)
-        save.save_model_w_condition(model=ppnet, model_dir=model_dir, model_name=str(epoch) + 'push', accu=accu,
+        save.save_model_w_condition(model=ppnet, model_dir=model_dir, model_name=str(epoch) + 'push', accu=test_metrics['acc'],
                                     target_accu=0.70, log=log)
 
         if prototype_activation_function != 'linear':
             tnt.last_only(model=ppnet_multi, log=log)
             for i in range(20):
                 log('iteration: \t{0}'.format(i))
-                _ = tnt.train(model=ppnet_multi, dataloader=train_loader, optimizer=last_layer_optimizer,
+                train_metrics = tnt.train(model=ppnet_multi, dataloader=train_loader, optimizer=last_layer_optimizer,
                               class_specific=class_specific, coefs=coefs, log=log)
-                accu = tnt.test(model=ppnet_multi, dataloader=test_loader,
+                test_metrics = tnt.test(model=ppnet_multi, dataloader=test_loader,
                                 class_specific=class_specific, log=log)
-                save.save_model_w_condition(model=ppnet, model_dir=model_dir, model_name=str(epoch) + '_' + str(i) + 'push', accu=accu,
+                save.save_model_w_condition(model=ppnet, model_dir=model_dir, model_name=str(epoch) + '_' + str(i) + 'push', accu=test_metrics['acc'],
                                             target_accu=0.70, log=log)
    
+metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+try:
+    metrics_df.to_csv(os.path.join(results_dir, 'metrics.csv'))
+except:
+    print('Unable to save metrics.csv')
+
 logclose()
 
