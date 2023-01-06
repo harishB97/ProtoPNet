@@ -4,6 +4,17 @@ from torchmetrics.functional import f1_score, recall, precision
 
 from helpers import list_of_distances, make_one_hot
 
+try:
+    from phylogeny_fish import species_to_ances_level0, species_to_ances_level1, species_to_ances_level2
+except:
+    print('Phylogeny_fish.py NOT FOUND')
+    species_to_ances_level0 = species_to_ances_level1 = species_to_ances_level2 = None
+
+PHYLO_LEVEL = None
+
+def print_phylo_level():
+    print('Training model with phylo level as ', PHYLO_LEVEL)
+
 def _train_or_test(model, dataloader, optimizer=None, class_specific=True, use_l1_mask=True,
                    coefs=None, log=print):
     '''
@@ -28,6 +39,18 @@ def _train_or_test(model, dataloader, optimizer=None, class_specific=True, use_l
     for i, (image, label) in enumerate(dataloader):
         input = image.cuda()
         target = label.cuda()
+
+        if PHYLO_LEVEL is not None:
+            label_list = label.numpy().tolist()
+            if PHYLO_LEVEL == 0:
+                label = torch.Tensor([species_to_ances_level0[x] for x in label_list]).long()
+                target = label.cuda()
+            elif PHYLO_LEVEL == 1:
+                label = torch.Tensor([species_to_ances_level1[x] for x in label_list]).long()
+                target = label.cuda()
+            elif PHYLO_LEVEL == 2:
+                label = torch.Tensor([species_to_ances_level2[x] for x in label_list]).long()
+                target = label.cuda()
 
         # torch.enable_grad() has no effect outside of no_grad()
         grad_req = torch.enable_grad() if is_train else torch.no_grad()

@@ -16,6 +16,15 @@ import model
 import find_nearest
 import train_and_test as tnt
 
+try:
+    from settings import phylo_level
+except:
+    phylo_level = None
+
+if phylo_level is not None:
+    tnt.PHYLO_LEVEL = phylo_level
+    tnt.print_phylo_level()
+
 from preprocess import preprocess_input_function
 
 import argparse

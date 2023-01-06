@@ -26,11 +26,11 @@ os.environ['CUDA_VISIBLE_DEVICES'] = args.gpuid[0]
 print(os.environ['CUDA_VISIBLE_DEVICES'])
 
 # book keeping namings and code
-from settings import base_architecture, img_size, prototype_shape, num_classes, \
+from settings_test import base_architecture, img_size, prototype_shape, num_classes, \
                      prototype_activation_function, add_on_layers_type, experiment_run
 
 try:
-    from settings import phylo_level
+    from settings_test import phylo_level
 except:
     phylo_level = None
 
@@ -45,7 +45,7 @@ base_architecture_type = re.match('^[a-z]*', base_architecture).group(0)
 model_dir = './saved_models/' + base_architecture + '/' + experiment_run + '/'
 makedir(model_dir)
 shutil.copy(src=os.path.join(os.getcwd(), __file__), dst=model_dir)
-shutil.copy(src=os.path.join(os.getcwd(), 'settings.py'), dst=model_dir)
+shutil.copy(src=os.path.join(os.getcwd(), 'settings_test.py'), dst=model_dir)
 shutil.copy(src=os.path.join(os.getcwd(), base_architecture_type + '_features.py'), dst=model_dir)
 shutil.copy(src=os.path.join(os.getcwd(), 'model.py'), dst=model_dir)
 shutil.copy(src=os.path.join(os.getcwd(), 'train_and_test.py'), dst=model_dir)
@@ -59,7 +59,7 @@ prototype_self_act_filename_prefix = 'prototype-self-act'
 proto_bound_boxes_filename_prefix = 'bb'
 
 # load the data
-from settings import train_dir, test_dir, train_push_dir, \
+from settings_test import train_dir, test_dir, train_push_dir, \
                      train_batch_size, test_batch_size, train_push_batch_size
 
 normalize = transforms.Normalize(mean=mean,
@@ -121,7 +121,7 @@ ppnet_multi = torch.nn.DataParallel(ppnet)
 class_specific = True
 
 # define optimizer
-from settings import joint_optimizer_lrs, joint_lr_step_size
+from settings_test import joint_optimizer_lrs, joint_lr_step_size
 joint_optimizer_specs = \
 [{'params': ppnet.features.parameters(), 'lr': joint_optimizer_lrs['features'], 'weight_decay': 1e-3}, # bias are now also being regularized
  {'params': ppnet.add_on_layers.parameters(), 'lr': joint_optimizer_lrs['add_on_layers'], 'weight_decay': 1e-3},
@@ -130,22 +130,22 @@ joint_optimizer_specs = \
 joint_optimizer = torch.optim.Adam(joint_optimizer_specs)
 joint_lr_scheduler = torch.optim.lr_scheduler.StepLR(joint_optimizer, step_size=joint_lr_step_size, gamma=0.1)
 
-from settings import warm_optimizer_lrs
+from settings_test import warm_optimizer_lrs
 warm_optimizer_specs = \
 [{'params': ppnet.add_on_layers.parameters(), 'lr': warm_optimizer_lrs['add_on_layers'], 'weight_decay': 1e-3},
  {'params': ppnet.prototype_vectors, 'lr': warm_optimizer_lrs['prototype_vectors']},
 ]
 warm_optimizer = torch.optim.Adam(warm_optimizer_specs)
 
-from settings import last_layer_optimizer_lr
+from settings_test import last_layer_optimizer_lr
 last_layer_optimizer_specs = [{'params': ppnet.last_layer.parameters(), 'lr': last_layer_optimizer_lr}]
 last_layer_optimizer = torch.optim.Adam(last_layer_optimizer_specs)
 
 # weighting of different training losses
-from settings import coefs
+from settings_test import coefs
 
 # number of training epochs, number of warm epochs, push start epoch, push epochs
-from settings import num_train_epochs, num_warm_epochs, push_start, push_epochs
+from settings_test import num_train_epochs, num_warm_epochs, push_start, push_epochs
 
 # train the model
 log('start training')
@@ -171,7 +171,7 @@ for epoch in range(num_train_epochs):
     test_metrics = tnt.test(model=ppnet_multi, dataloader=test_loader,
                     class_specific=class_specific, log=log)
     save.save_model_w_condition(model=ppnet, model_dir=model_dir, model_name=str(epoch) + 'nopush', accu=test_metrics['acc'],
-                                target_accu=0.10, log=log)
+                                target_accu=0.70, log=log)
     
     train_metrics = {'train_'+key : val for key, val in train_metrics.items()}
     test_metrics = {'test_'+key : val for key, val in test_metrics.items()}
@@ -204,7 +204,7 @@ for epoch in range(num_train_epochs):
         test_metrics = tnt.test(model=ppnet_multi, dataloader=test_loader,
                         class_specific=class_specific, log=log)
         save.save_model_w_condition(model=ppnet, model_dir=model_dir, model_name=str(epoch) + 'push', accu=test_metrics['acc'],
-                                    target_accu=0.10, log=log)
+                                    target_accu=0.70, log=log)
 
         if prototype_activation_function != 'linear':
             tnt.last_only(model=ppnet_multi, log=log)
@@ -215,7 +215,7 @@ for epoch in range(num_train_epochs):
                 test_metrics = tnt.test(model=ppnet_multi, dataloader=test_loader,
                                 class_specific=class_specific, log=log)
                 save.save_model_w_condition(model=ppnet, model_dir=model_dir, model_name=str(epoch) + '_' + str(i) + 'push', accu=test_metrics['acc'],
-                                            target_accu=0.10, log=log)
+                                            target_accu=0.70, log=log)
 
     log('Time elapsed: ' + str(time.time() - start) + ' seconds')
    

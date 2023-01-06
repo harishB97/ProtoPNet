@@ -10,12 +10,22 @@ import argparse
 
 from helpers import makedir
 import model
-import push
 import prune
 import train_and_test as tnt
 import save
 from log import create_logger
 from preprocess import mean, std, preprocess_input_function
+
+try:
+    from settings import phylo_level
+except:
+    phylo_level = None
+
+if phylo_level is not None:
+    tnt.PHYLO_LEVEL = phylo_level
+    tnt.print_phylo_level()
+
+import push
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-gpuid', nargs=1, type=str, default='0')
@@ -59,11 +69,11 @@ ppnet_multi = torch.nn.DataParallel(ppnet)
 class_specific = True
 
 # load the data
-from settings import train_dir, test_dir, train_push_dir
+from settings import train_dir, test_dir, train_push_dir, img_size
 
 train_batch_size = 80
 test_batch_size = 100
-img_size = 224
+# img_size = 224
 train_push_batch_size = 80
 
 normalize = transforms.Normalize(mean=mean,
@@ -125,14 +135,18 @@ prune.prune_prototypes(dataloader=train_push_loader,
                        #model_name=None,
                        log=log,
                        copy_prototype_imgs=True)
-accu = tnt.test(model=ppnet_multi, dataloader=test_loader,
+test_metrics = tnt.test(model=ppnet_multi, dataloader=test_loader,
                 class_specific=class_specific, log=log)
 save.save_model_w_condition(model=ppnet, model_dir=model_dir,
                             model_name=original_model_name.split('push')[0] + 'prune',
-                            accu=accu,
-                            target_accu=0.70, log=log)
+                            accu=test_metrics['acc'],
+                            target_accu=0.10, log=log)
 
 # last layer optimization
+import pandas as pd
+metrics_df = pd.DataFrame()
+results_dir = os.path.join(model_dir, 'results')
+makedir(results_dir)
 if optimize_last_layer:
     last_layer_optimizer_specs = [{'params': ppnet.last_layer.parameters(), 'lr': 1e-4}]
     last_layer_optimizer = torch.optim.Adam(last_layer_optimizer_specs)
@@ -148,13 +162,19 @@ if optimize_last_layer:
     tnt.last_only(model=ppnet_multi, log=log)
     for i in range(100):
         log('iteration: \t{0}'.format(i))
-        _ = tnt.train(model=ppnet_multi, dataloader=train_loader, optimizer=last_layer_optimizer,
+        train_metrics = tnt.train(model=ppnet_multi, dataloader=train_loader, optimizer=last_layer_optimizer,
                       class_specific=class_specific, coefs=coefs, log=log)
-        accu = tnt.test(model=ppnet_multi, dataloader=test_loader,
+        test_metrics = tnt.test(model=ppnet_multi, dataloader=test_loader,
                         class_specific=class_specific, log=log)
         save.save_model_w_condition(model=ppnet, model_dir=model_dir,
                                     model_name=original_model_name.split('push')[0] + '_' + str(i) + 'prune',
-                                    accu=accu,
-                                    target_accu=0.70, log=log)
+                                    accu=test_metrics['acc'],
+                                    target_accu=0.10, log=log)
+
+        metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+        try:
+            metrics_df.to_csv(os.path.join(results_dir, 'last_layer_opt_metrics.csv'))
+        except:
+            print('Unable to save metrics.csv')
 
 logclose()

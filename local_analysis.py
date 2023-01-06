@@ -22,6 +22,15 @@ import save
 from log import create_logger
 from preprocess import mean, std, preprocess_input_function, undo_preprocess_input_function
 
+try:
+    from settings import phylo_level
+except:
+    phylo_level = None
+
+if phylo_level is not None:
+    tnt.PHYLO_LEVEL = phylo_level
+    tnt.print_phylo_level()
+
 import argparse
 
 parser = argparse.ArgumentParser()

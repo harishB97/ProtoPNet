@@ -7,6 +7,9 @@ import torch
 from helpers import makedir
 import find_nearest
 
+import glob
+import ntpath
+
 def prune_prototypes(dataloader,
                      prototype_network_parallel,
                      k,
@@ -73,18 +76,29 @@ def prune_prototypes(dataloader,
         prototypes_to_keep = list(set(range(original_num_prototypes)) - set(prototypes_to_prune))
         
         for idx in range(len(prototypes_to_keep)):
-            shutil.copyfile(src=os.path.join(original_img_dir, 'prototype-img%d.png' % prototypes_to_keep[idx]),
-                            dst=os.path.join(dst_img_dir, 'prototype-img%d.png' % idx))
+            # shutil.copyfile(src=os.path.join(original_img_dir, 'prototype-img%d.png' % prototypes_to_keep[idx]),
+            #                 dst=os.path.join(dst_img_dir, 'prototype-img%d.png' % idx))
             
-            shutil.copyfile(src=os.path.join(original_img_dir, 'prototype-img-original%d.png' % prototypes_to_keep[idx]),
-                            dst=os.path.join(dst_img_dir, 'prototype-img-original%d.png' % idx))
+            # shutil.copyfile(src=os.path.join(original_img_dir, 'prototype-img-original%d.png' % prototypes_to_keep[idx]),
+            #                 dst=os.path.join(dst_img_dir, 'prototype-img-original%d.png' % idx))
             
-            shutil.copyfile(src=os.path.join(original_img_dir, 'prototype-img-original_with_self_act%d.png' % prototypes_to_keep[idx]),
-                            dst=os.path.join(dst_img_dir, 'prototype-img-original_with_self_act%d.png' % idx))
+            # shutil.copyfile(src=os.path.join(original_img_dir, 'prototype-img-original_with_self_act%d.png' % prototypes_to_keep[idx]),
+            #                 dst=os.path.join(dst_img_dir, 'prototype-img-original_with_self_act%d.png' % idx))
             
-            shutil.copyfile(src=os.path.join(original_img_dir, 'prototype-self-act%d.npy' % prototypes_to_keep[idx]),
-                            dst=os.path.join(dst_img_dir, 'prototype-self-act%d.npy' % idx))
+            # shutil.copyfile(src=os.path.join(original_img_dir, 'prototype-self-act%d.npy' % prototypes_to_keep[idx]),
+            #                 dst=os.path.join(dst_img_dir, 'prototype-self-act%d.npy' % idx))
 
+            src = glob.glob(os.path.join(original_img_dir, '*prototype-img%d.png' % prototypes_to_keep[idx]))[0]
+            shutil.copyfile(src=src, dst=os.path.join(dst_img_dir, ntpath.basename(src)))
+
+            src = glob.glob(os.path.join(original_img_dir, '*prototype-img-original%d.png' % prototypes_to_keep[idx]))[0]
+            shutil.copyfile(src=src, dst=os.path.join(dst_img_dir, ntpath.basename(src)))
+
+            src = glob.glob(os.path.join(original_img_dir, '*prototype-img-original_with_self_act%d.png' % prototypes_to_keep[idx]))[0]
+            shutil.copyfile(src=src, dst=os.path.join(dst_img_dir, ntpath.basename(src)))
+
+            src = glob.glob(os.path.join(original_img_dir, '*prototype-self-act%d.npy' % prototypes_to_keep[idx]))[0]
+            shutil.copyfile(src=src, dst=os.path.join(dst_img_dir, ntpath.basename(src)))
 
             bb = np.load(os.path.join(original_img_dir, 'bb%d.npy' % epoch_number))
             bb = bb[prototypes_to_keep]

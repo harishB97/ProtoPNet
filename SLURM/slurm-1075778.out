@@ -1,0 +1,6 @@
+start load env and run python
+Resetting modules to system default
+Resetting modules to system default
+/cm/local/apps/slurm/var/spool/job1075778/slurm_script: line 21: activate: No such file or directory
+/home/harishbabu/.conda/envs/taming3/bin/python
+slurmstepd: error: *** JOB 1075778 ON tc-dgx001 CANCELLED AT 2023-01-02T00:54:17 ***

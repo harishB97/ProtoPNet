@@ -1,0 +1,43 @@
+start load env and run python
+Resetting modules to system default
+Resetting modules to system default
+/cm/local/apps/slurm/var/spool/job1077293/slurm_script: line 21: activate: No such file or directory
+/home/harishbabu/.conda/envs/taming3/bin/python
+0
+Training model with phylo level as  1
+Running: 025-fish-lvl1-256-vgg16-10ppc-30ep
+training set size: 124200
+push set size: 4140
+test set size: 1294
+batch size: 80
+start training
+epoch: 	0
+	warm
+	train
+	time: 	232.38061475753784
+	cross ent: 	0.6584145861599265
+	cluster: 	0.2878744132236289
+	separation:	7.048085821880038
+	avg separation:	15.278219641521526
+	accu: 		77.15297906602254%
+	f1: 		77.15297937393188%
+	l1: 		210.0
+	p dist pair: 	33.52104187011719
+	test
+	time: 	3.060173988342285
+	cross ent: 	0.6489580492130839
+	cluster: 	0.49241119909744996
+	separation:	29.004494884266304
+	avg separation:	38.22181708996113
+	accu: 		78.28438948995363%
+	f1: 		78.2843828201294%
+	l1: 		210.0
+	p dist pair: 	33.52104187011719
+	above 10.00%
+Time elapsed: 235.79547786712646 seconds
+epoch: 	1
+	warm
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+slurmstepd: error: *** JOB 1077293 ON tc-dgx001 CANCELLED AT 2023-01-03T18:57:15 ***

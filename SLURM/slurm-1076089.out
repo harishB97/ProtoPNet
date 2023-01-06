@@ -1,0 +1,2485 @@
+start load env and run python
+Resetting modules to system default
+Resetting modules to system default
+/cm/local/apps/slurm/var/spool/job1076089/slurm_script: line 21: activate: No such file or directory
+/home/harishbabu/.conda/envs/taming3/bin/python
+Training model with phylo level as  1
+training set size: 124200
+test set size: 1294
+batch size: 80
+push set size: 4140
+	test
+	time: 	3.7465221881866455
+	cross ent: 	0.3894816259282659
+	cluster: 	4.112243606449248e-05
+	separation:	7.883511711690098e-05
+	avg separation:	0.0032756478489878085
+	accu: 		88.3307573415765%
+	f1: 		88.33075761795044%
+	l1: 		203.946044921875
+	p dist pair: 	0.010369574651122093
+prune
+find nearest patches
+batch 0
+batch 1
+batch 2
+batch 3
+batch 4
+batch 5
+batch 6
+batch 7
+batch 8
+batch 9
+batch 10
+batch 11
+batch 12
+batch 13
+batch 14
+batch 15
+batch 16
+batch 17
+batch 18
+batch 19
+batch 20
+batch 21
+batch 22
+batch 23
+batch 24
+batch 25
+batch 26
+batch 27
+batch 28
+batch 29
+batch 30
+batch 31
+batch 32
+batch 33
+batch 34
+batch 35
+batch 36
+batch 37
+batch 38
+batch 39
+batch 40
+batch 41
+batch 42
+batch 43
+batch 44
+batch 45
+batch 46
+batch 47
+batch 48
+batch 49
+batch 50
+batch 51
+	find nearest patches time: 	12.387306451797485
+k = 6, prune_threshold = 3
+52 prototypes will be pruned
+	test
+	time: 	3.605146884918213
+	cross ent: 	78.30556693443886
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		1.0046367851622875%
+	f1: 		1.0046367533504963%
+	l1: 		27.837799072265625
+	p dist pair: 	0.006313679739832878
+optimize last layer
+	last layer
+iteration: 	0
+	train
+	time: 	265.3679299354553
+	cross ent: 	69.05239662322704
+	cluster: 	124.47444053104594
+	separation:	0.000354305305355637
+	avg separation:	0.002086816733467338
+	accu: 		0.966183574879227%
+	f1: 		0.9661835618317127%
+	l1: 		21.398014068603516
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.6843807697296143
+	cross ent: 	59.80267803485577
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		1.0046367851622875%
+	f1: 		1.0046367533504963%
+	l1: 		21.398014068603516
+	p dist pair: 	0.006313679739832878
+iteration: 	1
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.63128447532654
+	cross ent: 	50.49178953840129
+	cluster: 	124.47444051139522
+	separation:	0.00035433951040425126
+	avg separation:	0.0020867200244934145
+	accu: 		0.966183574879227%
+	f1: 		0.9661835618317127%
+	l1: 		15.00348949432373
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.81512451171875
+	cross ent: 	41.28913762019231
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		1.0046367851622875%
+	f1: 		1.0046367533504963%
+	l1: 		15.00348949432373
+	p dist pair: 	0.006313679739832878
+iteration: 	2
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.3337125778198
+	cross ent: 	31.934835994005663
+	cluster: 	124.47444050648254
+	separation:	0.00035425568734218007
+	avg separation:	0.0020866028864670685
+	accu: 		0.966183574879227%
+	f1: 		0.9661835618317127%
+	l1: 		9.687546730041504
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.6859629154205322
+	cross ent: 	22.77706425006573
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		1.0046367851622875%
+	f1: 		1.0046367533504963%
+	l1: 		9.687546730041504
+	p dist pair: 	0.006313679739832878
+iteration: 	3
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.61633038520813
+	cross ent: 	13.536913051654352
+	cluster: 	124.47650104726581
+	separation:	0.00035427134642811896
+	avg separation:	0.002086619438357047
+	accu: 		0.9726247987117553%
+	f1: 		0.9726247750222683%
+	l1: 		8.736144065856934
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.693647623062134
+	cross ent: 	5.233541947144729
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		1.0046367851622875%
+	f1: 		1.0046367533504963%
+	l1: 		8.736144065856934
+	p dist pair: 	0.006313679739832878
+iteration: 	4
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.1551229953766
+	cross ent: 	2.254776144058414
+	cluster: 	124.47650120447163
+	separation:	0.0003541867261017038
+	avg separation:	0.002086478457003544
+	accu: 		20.825281803542673%
+	f1: 		20.825281739234924%
+	l1: 		10.231544494628906
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7086288928985596
+	cross ent: 	1.4334877591866713
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		36.86244204018547%
+	f1: 		36.86244189739227%
+	l1: 		10.231544494628906
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	5
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.12740898132324
+	cross ent: 	1.330933729986644
+	cluster: 	124.47650112586872
+	separation:	0.00035428976900756003
+	avg separation:	0.0020866568831616563
+	accu: 		48.95652173913044%
+	f1: 		48.95652234554291%
+	l1: 		10.297887802124023
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.694117546081543
+	cross ent: 	1.2850838395265431
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		54.09582689335394%
+	f1: 		54.09582853317261%
+	l1: 		10.297887802124023
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	6
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.1087210178375
+	cross ent: 	1.2243543605380725
+	cluster: 	124.47341034662624
+	separation:	0.000354207849930774
+	avg separation:	0.0020864285893422833
+	accu: 		54.666666666666664%
+	f1: 		54.666668176651%
+	l1: 		10.402079582214355
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.726390838623047
+	cross ent: 	1.1893556209710927
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		57.03245749613601%
+	f1: 		57.03245997428894%
+	l1: 		10.402079582214355
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	7
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	268.50858426094055
+	cross ent: 	1.147165770885335
+	cluster: 	124.47547083337001
+	separation:	0.0003542682759857185
+	avg separation:	0.002086695163562913
+	accu: 		56.470209339774556%
+	f1: 		56.47020936012268%
+	l1: 		10.493009567260742
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.750469923019409
+	cross ent: 	1.125071188578239
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		58.887171561051%
+	f1: 		58.88717174530029%
+	l1: 		10.493009567260742
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	8
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.84512758255005
+	cross ent: 	1.0980560554279026
+	cluster: 	124.47547077441783
+	separation:	0.00035422246528106163
+	avg separation:	0.0020865437094780633
+	accu: 		58.408212560386474%
+	f1: 		58.408212661743164%
+	l1: 		10.643057823181152
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.745800733566284
+	cross ent: 	1.0868903925785651
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		60.432766615146825%
+	f1: 		60.43276786804199%
+	l1: 		10.643057823181152
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	9
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	267.19016122817993
+	cross ent: 	1.0687858021343744
+	cluster: 	124.47650107182922
+	separation:	0.00035423751022206504
+	avg separation:	0.002086668393211241
+	accu: 		60.27777777777777%
+	f1: 		60.277777910232544%
+	l1: 		10.77839469909668
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	4.478938579559326
+	cross ent: 	1.0641523897647858
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		61.12828438948995%
+	f1: 		61.12828254699707%
+	l1: 		10.77839469909668
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	10
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	267.2173173427582
+	cross ent: 	1.0508130936183548
+	cluster: 	124.47650106691654
+	separation:	0.00035428835644106126
+	avg separation:	0.002086675268161924
+	accu: 		61.84943639291466%
+	f1: 		61.84943914413452%
+	l1: 		10.934470176696777
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7471323013305664
+	cross ent: 	1.0497644658272083
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		62.519319938176196%
+	f1: 		62.519317865371704%
+	l1: 		10.934470176696777
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	11
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.80105090141296
+	cross ent: 	1.0389207817244668
+	cluster: 	124.47547083337001
+	separation:	0.0003542762589621425
+	avg separation:	0.002086723074379946
+	accu: 		62.85829307568438%
+	f1: 		62.85829544067383%
+	l1: 		11.124208450317383
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.6851789951324463
+	cross ent: 	1.0397751434491231
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		63.67851622874807%
+	f1: 		63.67851495742798%
+	l1: 		11.124208450317383
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	12
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	268.5815968513489
+	cross ent: 	1.0302004297932577
+	cluster: 	124.4765012388604
+	separation:	0.0003542107980007501
+	avg separation:	0.002086600156441566
+	accu: 		63.45813204508857%
+	f1: 		63.45813274383545%
+	l1: 		11.316564559936523
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7656164169311523
+	cross ent: 	1.0328096529612174
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		63.446676970633696%
+	f1: 		63.44667673110962%
+	l1: 		11.316564559936523
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	13
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	263.9125530719757
+	cross ent: 	1.0235666673335426
+	cluster: 	124.4765010767419
+	separation:	0.00035415804786938064
+	avg separation:	0.002086424207013803
+	accu: 		63.82608695652174%
+	f1: 		63.82608413696289%
+	l1: 		11.47928524017334
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.722059488296509
+	cross ent: 	1.0271713000077467
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		63.446676970633696%
+	f1: 		63.44667673110962%
+	l1: 		11.47928524017334
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	14
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.79893159866333
+	cross ent: 	1.0180524983332377
+	cluster: 	124.47650109639262
+	separation:	0.0003543412291969719
+	avg separation:	0.002086773779586855
+	accu: 		64.10225442834138%
+	f1: 		64.10225629806519%
+	l1: 		11.658248901367188
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.865069627761841
+	cross ent: 	1.0215200690122752
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.60587326120556%
+	f1: 		64.6058738231659%
+	l1: 		11.658248901367188
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	15
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.26743268966675
+	cross ent: 	1.0132833631362597
+	cluster: 	124.47650117008286
+	separation:	0.00035442996408444554
+	avg separation:	0.0020870650546200675
+	accu: 		64.21980676328502%
+	f1: 		64.21980857849121%
+	l1: 		11.808235168457031
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.8158223628997803
+	cross ent: 	1.017587926525336
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.52859350850078%
+	f1: 		64.5285964012146%
+	l1: 		11.808235168457031
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	16
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.41239857673645
+	cross ent: 	1.0094484348720838
+	cluster: 	124.47650103252776
+	separation:	0.0003544225955094662
+	avg separation:	0.002086885297744123
+	accu: 		64.33494363929147%
+	f1: 		64.33494091033936%
+	l1: 		11.955355644226074
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.839620351791382
+	cross ent: 	1.0135218822039092
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.83771251931994%
+	f1: 		64.83771204948425%
+	l1: 		11.955355644226074
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	17
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.12955832481384
+	cross ent: 	1.0059108804366854
+	cluster: 	124.4754707842432
+	separation:	0.0003542363441620118
+	avg separation:	0.0020866418424969765
+	accu: 		64.43719806763285%
+	f1: 		64.43719863891602%
+	l1: 		12.102514266967773
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7293331623077393
+	cross ent: 	1.0111321715208201
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.14219474497682%
+	f1: 		64.14219737052917%
+	l1: 		12.102514266967773
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	18
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.8229477405548
+	cross ent: 	1.0028853178101054
+	cluster: 	124.47650111113067
+	separation:	0.00035421134997794544
+	avg separation:	0.0020865517151491034
+	accu: 		64.4597423510467%
+	f1: 		64.45974111557007%
+	l1: 		12.22365951538086
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.6808247566223145
+	cross ent: 	1.0068922673280423
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.76043276661515%
+	f1: 		64.76043462753296%
+	l1: 		12.22365951538086
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	19
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	267.05399680137634
+	cross ent: 	0.999990785152622
+	cluster: 	124.47650101778973
+	separation:	0.0003543083758519161
+	avg separation:	0.0020867291172571765
+	accu: 		64.52173913043478%
+	f1: 		64.52174186706543%
+	l1: 		12.354120254516602
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.6777901649475098
+	cross ent: 	1.0048846281491792
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.76043276661515%
+	f1: 		64.76043462753296%
+	l1: 		12.354120254516602
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	20
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.83196663856506
+	cross ent: 	0.997602033215957
+	cluster: 	124.47547083337001
+	separation:	0.00035428804951090337
+	avg separation:	0.002086671015816811
+	accu: 		64.54267310789051%
+	f1: 		64.54267501831055%
+	l1: 		12.467401504516602
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.700626850128174
+	cross ent: 	1.0026121884584427
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.76043276661515%
+	f1: 		64.76043462753296%
+	l1: 		12.467401504516602
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	21
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.48948669433594
+	cross ent: 	0.9955574070647387
+	cluster: 	124.47650098831363
+	separation:	0.0003542695656199238
+	avg separation:	0.0020866288703219236
+	accu: 		64.59017713365539%
+	f1: 		64.59017992019653%
+	l1: 		12.566171646118164
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.723928451538086
+	cross ent: 	1.0007135088627155
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.76043276661515%
+	f1: 		64.76043462753296%
+	l1: 		12.566171646118164
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	22
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.8340754508972
+	cross ent: 	0.9936515601389038
+	cluster: 	124.4765011307814
+	separation:	0.00035424801089065295
+	avg separation:	0.0020867097503352726
+	accu: 		64.65217391304347%
+	f1: 		64.65217471122742%
+	l1: 		12.678451538085938
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.6611826419830322
+	cross ent: 	0.9998075709893153
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.45131375579598%
+	f1: 		64.45131301879883%
+	l1: 		12.678451538085938
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	23
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.898154258728
+	cross ent: 	0.9919347298275787
+	cluster: 	124.47547083337001
+	separation:	0.0003543334303823907
+	avg separation:	0.0020868275608418837
+	accu: 		64.67552334943639%
+	f1: 		64.67552185058594%
+	l1: 		12.782947540283203
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.69034481048584
+	cross ent: 	0.998509298150356
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2967542503864%
+	f1: 		64.29675221443176%
+	l1: 		12.782947540283203
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	24
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.72195076942444
+	cross ent: 	0.9903954243706029
+	cluster: 	124.47650114060676
+	separation:	0.00035432127189997866
+	avg separation:	0.0020867736930812
+	accu: 		64.64412238325282%
+	f1: 		64.64412212371826%
+	l1: 		12.876194953918457
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.6991124153137207
+	cross ent: 	0.9970873296260834
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2194744976816%
+	f1: 		64.21947479248047%
+	l1: 		12.876194953918457
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	25
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.98155999183655
+	cross ent: 	0.9891860968285197
+	cluster: 	124.47237989200904
+	separation:	0.000354256854160048
+	avg separation:	0.00208672974723423
+	accu: 		64.6658615136876%
+	f1: 		64.66585993766785%
+	l1: 		12.967500686645508
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.700169563293457
+	cross ent: 	0.9952852634283212
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.68315301391036%
+	f1: 		64.68315124511719%
+	l1: 		12.967500686645508
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	26
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.1313374042511
+	cross ent: 	0.987831802461812
+	cluster: 	124.47547095618705
+	separation:	0.0003542778553461294
+	avg separation:	0.0020866644860641683
+	accu: 		64.73027375201288%
+	f1: 		64.73027467727661%
+	l1: 		13.057219505310059
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7156028747558594
+	cross ent: 	0.9949576808856084
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2967542503864%
+	f1: 		64.29675221443176%
+	l1: 		13.057219505310059
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	27
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.1451795101166
+	cross ent: 	0.9868077749754641
+	cluster: 	124.47444058999812
+	separation:	0.0003542139296328765
+	avg separation:	0.00208657247815533
+	accu: 		64.73752012882447%
+	f1: 		64.7375226020813%
+	l1: 		13.142498016357422
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7176103591918945
+	cross ent: 	0.9919124119556867
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.60587326120556%
+	f1: 		64.6058738231659%
+	l1: 		13.142498016357422
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	28
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.3265550136566
+	cross ent: 	0.9857330425508699
+	cluster: 	124.47650117008286
+	separation:	0.0003541986998542049
+	avg separation:	0.0020864600133833266
+	accu: 		64.78180354267312%
+	f1: 		64.78180289268494%
+	l1: 		13.216645240783691
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.735895872116089
+	cross ent: 	0.9908294551647626
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.52859350850078%
+	f1: 		64.5285964012146%
+	l1: 		13.216645240783691
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	29
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.4161329269409
+	cross ent: 	0.9848080426742396
+	cluster: 	124.47547098566315
+	separation:	0.0003542563013898998
+	avg separation:	0.0020866958219504027
+	accu: 		64.77697262479872%
+	f1: 		64.77697491645813%
+	l1: 		13.301911354064941
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7689154148101807
+	cross ent: 	0.9903770925906988
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.52859350850078%
+	f1: 		64.5285964012146%
+	l1: 		13.301911354064941
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	30
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.68307971954346
+	cross ent: 	0.9840254746401456
+	cluster: 	124.47650120447163
+	separation:	0.0003542016479030981
+	avg separation:	0.0020865706969184486
+	accu: 		64.78180354267312%
+	f1: 		64.78180289268494%
+	l1: 		13.377506256103516
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7183611392974854
+	cross ent: 	0.9904875113413885
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.45131375579598%
+	f1: 		64.45131301879883%
+	l1: 		13.377506256103516
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	31
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	263.716748714447
+	cross ent: 	0.9833405122247267
+	cluster: 	124.47341028276138
+	separation:	0.00035429830464286114
+	avg separation:	0.0020867140356634777
+	accu: 		64.82045088566828%
+	f1: 		64.8204505443573%
+	l1: 		13.453181266784668
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7764346599578857
+	cross ent: 	0.9905465772518744
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2967542503864%
+	f1: 		64.29675221443176%
+	l1: 		13.453181266784668
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	32
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.18386220932007
+	cross ent: 	0.9827056132588015
+	cluster: 	124.4754708382827
+	separation:	0.0003542434058618831
+	avg separation:	0.002086638776268822
+	accu: 		64.8268921095008%
+	f1: 		64.82689380645752%
+	l1: 		13.515769958496094
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.687283515930176
+	cross ent: 	0.9879424881476623
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.60587326120556%
+	f1: 		64.6058738231659%
+	l1: 		13.515769958496094
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	33
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.80282759666443
+	cross ent: 	0.9820128737229803
+	cluster: 	124.47444053595864
+	separation:	0.0003545141559129441
+	avg separation:	0.0020870333249606936
+	accu: 		64.81159420289855%
+	f1: 		64.81159329414368%
+	l1: 		13.592544555664062
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.6835267543792725
+	cross ent: 	0.9874725536658213
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.68315301391036%
+	f1: 		64.68315124511719%
+	l1: 		13.592544555664062
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	34
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.03601813316345
+	cross ent: 	0.9814758902584747
+	cluster: 	124.47650101287704
+	separation:	0.00035418445331485306
+	avg separation:	0.0020864928030742947
+	accu: 		64.82769726247987%
+	f1: 		64.82769846916199%
+	l1: 		13.660083770751953
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.8128302097320557
+	cross ent: 	0.9878047853708267
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.52859350850078%
+	f1: 		64.5285964012146%
+	l1: 		13.660083770751953
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	35
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	263.71282505989075
+	cross ent: 	0.9810739053270545
+	cluster: 	124.47547077441783
+	separation:	0.0003541769613062747
+	avg separation:	0.002086449417040347
+	accu: 		64.83655394524959%
+	f1: 		64.83655571937561%
+	l1: 		13.718247413635254
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7298059463500977
+	cross ent: 	0.9865097655699804
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.60587326120556%
+	f1: 		64.6058738231659%
+	l1: 		13.718247413635254
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	36
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.41984510421753
+	cross ent: 	0.9804661089730738
+	cluster: 	124.47650111113067
+	separation:	0.0003544166391835702
+	avg separation:	0.0020869303991986918
+	accu: 		64.85024154589371%
+	f1: 		64.85024094581604%
+	l1: 		13.786728858947754
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7198126316070557
+	cross ent: 	0.9872556752883471
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.68315301391036%
+	f1: 		64.68315124511719%
+	l1: 		13.786728858947754
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	37
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	263.7683074474335
+	cross ent: 	0.9800784671913019
+	cluster: 	124.4765011848209
+	separation:	0.0003542096309568262
+	avg separation:	0.0020865205760369964
+	accu: 		64.87359098228663%
+	f1: 		64.87358808517456%
+	l1: 		13.844125747680664
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7452456951141357
+	cross ent: 	0.9861191763327672
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.37403400309118%
+	f1: 		64.37403559684753%
+	l1: 		13.844125747680664
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	38
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.5374894142151
+	cross ent: 	0.979637245209234
+	cluster: 	124.47547083337001
+	separation:	0.0003542773033197406
+	avg separation:	0.0020865896407572383
+	accu: 		64.87761674718196%
+	f1: 		64.87761735916138%
+	l1: 		13.908967018127441
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	4.820570468902588
+	cross ent: 	0.9857717064710764
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.83771251931994%
+	f1: 		64.83771204948425%
+	l1: 		13.908967018127441
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	39
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.59301924705505
+	cross ent: 	0.9793751497692396
+	cluster: 	124.47650119955894
+	separation:	0.00035427773321381644
+	avg separation:	0.0020866464293206257
+	accu: 		64.85507246376811%
+	f1: 		64.85507488250732%
+	l1: 		13.962638854980469
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7205913066864014
+	cross ent: 	0.9849428557432615
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.60587326120556%
+	f1: 		64.6058738231659%
+	l1: 		13.962638854980469
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	40
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.8326406478882
+	cross ent: 	0.978859652800477
+	cluster: 	124.47444055560935
+	separation:	0.00035433564106943517
+	avg separation:	0.002086799143434545
+	accu: 		64.89533011272141%
+	f1: 		64.89533185958862%
+	l1: 		14.024726867675781
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7019665241241455
+	cross ent: 	0.9858652651309967
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.52859350850078%
+	f1: 		64.5285964012146%
+	l1: 		14.024726867675781
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	41
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.9756655693054
+	cross ent: 	0.9786166689200932
+	cluster: 	124.4754709168856
+	separation:	0.0003542671092697515
+	avg separation:	0.0020865958006494826
+	accu: 		64.86634460547504%
+	f1: 		64.86634612083435%
+	l1: 		14.064513206481934
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.694446325302124
+	cross ent: 	0.9835692311708744
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.52859350850078%
+	f1: 		64.5285964012146%
+	l1: 		14.064513206481934
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	42
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.6323139667511
+	cross ent: 	0.9782046908266837
+	cluster: 	124.47650101778973
+	separation:	0.0003542069288240561
+	avg separation:	0.0020865696685955994
+	accu: 		64.91062801932367%
+	f1: 		64.91062641143799%
+	l1: 		14.131671905517578
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.700888156890869
+	cross ent: 	0.9847907962707373
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.37403400309118%
+	f1: 		64.37403559684753%
+	l1: 		14.131671905517578
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	43
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.93641805648804
+	cross ent: 	0.9780673177028885
+	cluster: 	124.47547084319538
+	separation:	0.0003542163855824729
+	avg separation:	0.0020865970678748628
+	accu: 		64.88003220611917%
+	f1: 		64.88003134727478%
+	l1: 		14.177282333374023
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.708754301071167
+	cross ent: 	0.9851723645742123
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2194744976816%
+	f1: 		64.21947479248047%
+	l1: 		14.177282333374023
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	44
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.6666057109833
+	cross ent: 	0.9777095707784679
+	cluster: 	124.47547079898125
+	separation:	0.0003543416591531253
+	avg separation:	0.002086813471739403
+	accu: 		64.88566827697262%
+	f1: 		64.88566994667053%
+	l1: 		14.227804183959961
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7162415981292725
+	cross ent: 	0.9844370060242139
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2194744976816%
+	f1: 		64.21947479248047%
+	l1: 		14.227804183959961
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	45
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.9747517108917
+	cross ent: 	0.9773839557470234
+	cluster: 	124.47650117008286
+	separation:	0.00035428841754294165
+	avg separation:	0.002086696548627885
+	accu: 		64.93236714975845%
+	f1: 		64.93236422538757%
+	l1: 		14.273953437805176
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.74291729927063
+	cross ent: 	0.9842346700338217
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.14219474497682%
+	f1: 		64.14219737052917%
+	l1: 		14.273953437805176
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	46
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.7253363132477
+	cross ent: 	0.9772121289508694
+	cluster: 	124.47341026802333
+	separation:	0.00035435080910319673
+	avg separation:	0.002086725795485022
+	accu: 		64.90016103059581%
+	f1: 		64.90015983581543%
+	l1: 		14.320489883422852
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7502505779266357
+	cross ent: 	0.9832054319290014
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.37403400309118%
+	f1: 		64.37403559684753%
+	l1: 		14.320489883422852
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	47
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.42473340034485
+	cross ent: 	0.9770079607435449
+	cluster: 	124.47547078915588
+	separation:	0.00035418623465129307
+	avg separation:	0.002086372030536115
+	accu: 		64.92190016103059%
+	f1: 		64.92189764976501%
+	l1: 		14.362343788146973
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.775517702102661
+	cross ent: 	0.9826415261396995
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.60587326120556%
+	f1: 		64.6058738231659%
+	l1: 		14.362343788146973
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	48
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	263.54156017303467
+	cross ent: 	0.9767763734401155
+	cluster: 	124.47444053595864
+	separation:	0.000354337912871244
+	avg separation:	0.002086719946008648
+	accu: 		64.9500805152979%
+	f1: 		64.95007872581482%
+	l1: 		14.401717185974121
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.774599313735962
+	cross ent: 	0.9823182144990334
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.60587326120556%
+	f1: 		64.6058738231659%
+	l1: 		14.401717185974121
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	49
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	263.88810753822327
+	cross ent: 	0.9767296938303587
+	cluster: 	124.4744405998235
+	separation:	0.000354477801587211
+	avg separation:	0.0020869338418838626
+	accu: 		64.93478260869566%
+	f1: 		64.93478417396545%
+	l1: 		14.456132888793945
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.772698402404785
+	cross ent: 	0.9825217162187283
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.37403400309118%
+	f1: 		64.37403559684753%
+	l1: 		14.456132888793945
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	50
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.2427864074707
+	cross ent: 	0.976395685635915
+	cluster: 	124.47650114551945
+	separation:	0.000354474608579126
+	avg separation:	0.0020871315351900263
+	accu: 		64.94363929146539%
+	f1: 		64.94364142417908%
+	l1: 		14.495217323303223
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.843614339828491
+	cross ent: 	0.982887300161215
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.37403400309118%
+	f1: 		64.37403559684753%
+	l1: 		14.495217323303223
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	51
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	263.6094620227814
+	cross ent: 	0.9761809626856851
+	cluster: 	124.4734102778487
+	separation:	0.0003542485023281797
+	avg separation:	0.0020865625200351774
+	accu: 		64.9621578099839%
+	f1: 		64.96216058731079%
+	l1: 		14.544870376586914
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.9186317920684814
+	cross ent: 	0.982391317303364
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.60587326120556%
+	f1: 		64.6058738231659%
+	l1: 		14.544870376586914
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	52
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.113600730896
+	cross ent: 	0.9760330357784928
+	cluster: 	124.47547077933052
+	separation:	0.00035438310984325407
+	avg separation:	0.002086928943819765
+	accu: 		64.92995169082126%
+	f1: 		64.92995023727417%
+	l1: 		14.578438758850098
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.735475540161133
+	cross ent: 	0.9832473580653851
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		63.83307573415765%
+	f1: 		63.833075761795044%
+	l1: 		14.578438758850098
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	53
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	263.90808296203613
+	cross ent: 	0.9759947258429764
+	cluster: 	124.47547087267147
+	separation:	0.0003543082529278215
+	avg separation:	0.0020868528039264807
+	accu: 		64.92028985507247%
+	f1: 		64.92028832435608%
+	l1: 		14.627923965454102
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7015233039855957
+	cross ent: 	0.9821060380110374
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2194744976816%
+	f1: 		64.21947479248047%
+	l1: 		14.627923965454102
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	54
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.20182251930237
+	cross ent: 	0.9757678871068813
+	cluster: 	124.47650106691654
+	separation:	0.0003542184123993219
+	avg separation:	0.0020865312783006776
+	accu: 		64.97342995169082%
+	f1: 		64.97343182563782%
+	l1: 		14.662841796875
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7119948863983154
+	cross ent: 	0.9819532415041556
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.60587326120556%
+	f1: 		64.6058738231659%
+	l1: 		14.662841796875
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	55
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.56335496902466
+	cross ent: 	0.9756703290030485
+	cluster: 	124.47444068825176
+	separation:	0.00035418727822062335
+	avg separation:	0.00208658548451286
+	accu: 		64.97906602254429%
+	f1: 		64.97906446456909%
+	l1: 		14.695686340332031
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7399373054504395
+	cross ent: 	0.9817396104335785
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2967542503864%
+	f1: 		64.29675221443176%
+	l1: 		14.695686340332031
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	56
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.76601672172546
+	cross ent: 	0.9754880390778251
+	cluster: 	124.47547084810806
+	separation:	0.00035422129843625444
+	avg separation:	0.0020865142852618465
+	accu: 		64.9573268921095%
+	f1: 		64.9573266506195%
+	l1: 		14.74237060546875
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	4.0025622844696045
+	cross ent: 	0.9829189295952137
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		63.98763523956723%
+	f1: 		63.98763656616211%
+	l1: 		14.74237060546875
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	57
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.96474623680115
+	cross ent: 	0.9753026361244383
+	cluster: 	124.47650102270241
+	separation:	0.00035423327296531053
+	avg separation:	0.0020865926794744957
+	accu: 		64.96296296296296%
+	f1: 		64.96296525001526%
+	l1: 		14.777217864990234
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.832031726837158
+	cross ent: 	0.9819077402353287
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.06491499227202%
+	f1: 		64.0649139881134%
+	l1: 		14.777217864990234
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	58
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.98765230178833
+	cross ent: 	0.9751373145247151
+	cluster: 	124.47650107182922
+	separation:	0.00035437543363769464
+	avg separation:	0.0020869485761805967
+	accu: 		64.92351046698873%
+	f1: 		64.92351293563843%
+	l1: 		14.801305770874023
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	4.37617564201355
+	cross ent: 	0.9801999479532242
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.52859350850078%
+	f1: 		64.5285964012146%
+	l1: 		14.801305770874023
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	59
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.93917655944824
+	cross ent: 	0.9750795980767902
+	cluster: 	124.47341027293601
+	separation:	0.00035427196125239373
+	avg separation:	0.0020866150985317782
+	accu: 		64.9718196457327%
+	f1: 		64.97182250022888%
+	l1: 		14.832460403442383
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7474546432495117
+	cross ent: 	0.9821294122017347
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		63.98763523956723%
+	f1: 		63.98763656616211%
+	l1: 		14.832460403442383
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	60
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.0984356403351
+	cross ent: 	0.9750353740786094
+	cluster: 	124.47650111113067
+	separation:	0.00035455130785557484
+	avg separation:	0.002087313904926536
+	accu: 		64.97423510466989%
+	f1: 		64.97423648834229%
+	l1: 		14.872750282287598
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7600879669189453
+	cross ent: 	0.9803321693952267
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2194744976816%
+	f1: 		64.21947479248047%
+	l1: 		14.872750282287598
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	61
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.9827575683594
+	cross ent: 	0.9748703109319948
+	cluster: 	124.47547084319538
+	separation:	0.0003542204385134062
+	avg separation:	0.0020865532277986715
+	accu: 		64.96618357487922%
+	f1: 		64.96618390083313%
+	l1: 		14.907105445861816
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	4.121703386306763
+	cross ent: 	0.9811987716418046
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.06491499227202%
+	f1: 		64.0649139881134%
+	l1: 		14.907105445861816
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	62
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.2237186431885
+	cross ent: 	0.974645015200107
+	cluster: 	124.47547086775879
+	separation:	0.00035418138311022135
+	avg separation:	0.0020864634935492837
+	accu: 		64.95088566827697%
+	f1: 		64.95088338851929%
+	l1: 		14.933781623840332
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7059812545776367
+	cross ent: 	0.9801917259509747
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2967542503864%
+	f1: 		64.29675221443176%
+	l1: 		14.933781623840332
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	63
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.8295452594757
+	cross ent: 	0.9745997816458565
+	cluster: 	124.47444058508545
+	separation:	0.0003542486253740868
+	avg separation:	0.002086616092447266
+	accu: 		64.9573268921095%
+	f1: 		64.9573266506195%
+	l1: 		14.966468811035156
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.715425968170166
+	cross ent: 	0.9800819605588913
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2967542503864%
+	f1: 		64.29675221443176%
+	l1: 		14.966468811035156
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	64
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.1419599056244
+	cross ent: 	0.9744461422878469
+	cluster: 	124.47547075476712
+	separation:	0.00035423315008923815
+	avg separation:	0.0020866033173461865
+	accu: 		64.9669887278583%
+	f1: 		64.9669885635376%
+	l1: 		15.002338409423828
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7208521366119385
+	cross ent: 	0.9810966299130366
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2194744976816%
+	f1: 		64.21947479248047%
+	l1: 		15.002338409423828
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	65
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.3050880432129
+	cross ent: 	0.9743659855547215
+	cluster: 	124.47547074494175
+	separation:	0.00035426367036311247
+	avg separation:	0.0020866640509122412
+	accu: 		64.96859903381642%
+	f1: 		64.96859788894653%
+	l1: 		15.033390045166016
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7522382736206055
+	cross ent: 	0.9811943952853863
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2967542503864%
+	f1: 		64.29675221443176%
+	l1: 		15.033390045166016
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	66
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.5522758960724
+	cross ent: 	0.974263383278291
+	cluster: 	124.47341034662624
+	separation:	0.00035427779450075816
+	avg separation:	0.002086627970558171
+	accu: 		64.9621578099839%
+	f1: 		64.96216058731079%
+	l1: 		15.073671340942383
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.756197452545166
+	cross ent: 	0.9810658544301987
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.52859350850078%
+	f1: 		64.5285964012146%
+	l1: 		15.073671340942383
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	67
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.3582515716553
+	cross ent: 	0.9740821265514175
+	cluster: 	124.4754708088066
+	separation:	0.00035421693853768244
+	avg separation:	0.0020865940946740197
+	accu: 		64.97745571658615%
+	f1: 		64.97745513916016%
+	l1: 		15.099581718444824
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.764063835144043
+	cross ent: 	0.9815134830199755
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.14219474497682%
+	f1: 		64.14219737052917%
+	l1: 		15.099581718444824
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	68
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.272332906723
+	cross ent: 	0.9740870845601854
+	cluster: 	124.4754709168856
+	separation:	0.00035432016580566947
+	avg separation:	0.0020867660541971336
+	accu: 		64.96618357487922%
+	f1: 		64.96618390083313%
+	l1: 		15.12346363067627
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7192764282226562
+	cross ent: 	0.9807419708141913
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.37403400309118%
+	f1: 		64.37403559684753%
+	l1: 		15.12346363067627
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	69
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.92268896102905
+	cross ent: 	0.9740663384209122
+	cluster: 	124.4754708382827
+	separation:	0.0003543217623840879
+	avg separation:	0.002086908926306375
+	accu: 		64.94605475040258%
+	f1: 		64.94605541229248%
+	l1: 		15.149778366088867
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.77336049079895
+	cross ent: 	0.9791196114741839
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.68315301391036%
+	f1: 		64.68315124511719%
+	l1: 		15.149778366088867
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	70
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.7729721069336
+	cross ent: 	0.9739752292479535
+	cluster: 	124.47547092671097
+	separation:	0.0003542085870068317
+	avg separation:	0.002086552524134392
+	accu: 		64.9645732689211%
+	f1: 		64.9645745754242%
+	l1: 		15.187118530273438
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7415764331817627
+	cross ent: 	0.9797934190585063
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.37403400309118%
+	f1: 		64.37403559684753%
+	l1: 		15.187118530273438
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	71
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.35004138946533
+	cross ent: 	0.9737995047762712
+	cluster: 	124.47444060964885
+	separation:	0.00035424794967047385
+	avg separation:	0.002086540601496313
+	accu: 		64.96940418679549%
+	f1: 		64.969402551651%
+	l1: 		15.211742401123047
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.721102476119995
+	cross ent: 	0.9797157381589596
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.37403400309118%
+	f1: 		64.37403559684753%
+	l1: 		15.211742401123047
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	72
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.39811420440674
+	cross ent: 	0.9737002041673015
+	cluster: 	124.47547078915588
+	separation:	0.000354263669994161
+	avg separation:	0.002086603429263814
+	accu: 		64.94363929146539%
+	f1: 		64.94364142417908%
+	l1: 		15.240707397460938
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7150330543518066
+	cross ent: 	0.9785175312023896
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.45131375579598%
+	f1: 		64.45131301879883%
+	l1: 		15.240707397460938
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	73
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.61874508857727
+	cross ent: 	0.9736199390865186
+	cluster: 	124.47547077933052
+	separation:	0.000354376662180561
+	avg separation:	0.00208688401177835
+	accu: 		64.9573268921095%
+	f1: 		64.9573266506195%
+	l1: 		15.27033805847168
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.789659023284912
+	cross ent: 	0.981175768833894
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.14219474497682%
+	f1: 		64.14219737052917%
+	l1: 		15.27033805847168
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	74
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.96283650398254
+	cross ent: 	0.9735181922307724
+	cluster: 	124.47547084319538
+	separation:	0.0003542122715602007
+	avg separation:	0.0020864535289824354
+	accu: 		64.93719806763285%
+	f1: 		64.93719816207886%
+	l1: 		15.290075302124023
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.693516969680786
+	cross ent: 	0.9780208353812878
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.60587326120556%
+	f1: 		64.6058738231659%
+	l1: 		15.290075302124023
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	75
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.2938232421875
+	cross ent: 	0.9734900267908669
+	cluster: 	124.4754707842432
+	separation:	0.0003543320178650855
+	avg separation:	0.0020867698433546917
+	accu: 		64.93961352657006%
+	f1: 		64.93961215019226%
+	l1: 		15.319878578186035
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.832794189453125
+	cross ent: 	0.9790250211954117
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.14219474497682%
+	f1: 		64.14219737052917%
+	l1: 		15.319878578186035
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	76
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.6870131492615
+	cross ent: 	0.9734602306093313
+	cluster: 	124.47650105709117
+	separation:	0.00035426981106753707
+	avg separation:	0.0020866565423113873
+	accu: 		64.9645732689211%
+	f1: 		64.9645745754242%
+	l1: 		15.34859848022461
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7353475093841553
+	cross ent: 	0.9801565970365818
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.14219474497682%
+	f1: 		64.14219737052917%
+	l1: 		15.34859848022461
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	77
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.45313715934753
+	cross ent: 	0.9734587899654509
+	cluster: 	124.47547084810806
+	separation:	0.0003541678730636326
+	avg separation:	0.0020865492879683528
+	accu: 		64.94685990338164%
+	f1: 		64.94686007499695%
+	l1: 		15.37220573425293
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7458865642547607
+	cross ent: 	0.9799667952152399
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.52859350850078%
+	f1: 		64.5285964012146%
+	l1: 		15.37220573425293
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	78
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.2392797470093
+	cross ent: 	0.9732291675811419
+	cluster: 	124.47547093653633
+	separation:	0.00035434503648703155
+	avg separation:	0.0020868332351330625
+	accu: 		64.98470209339774%
+	f1: 		64.98470306396484%
+	l1: 		15.3961181640625
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.8024439811706543
+	cross ent: 	0.9795776960941461
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.45131375579598%
+	f1: 		64.45131301879883%
+	l1: 		15.3961181640625
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	79
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.00664472579956
+	cross ent: 	0.9731839369821763
+	cluster: 	124.47650109639262
+	separation:	0.00035421485049128416
+	avg separation:	0.002086553617149078
+	accu: 		64.96135265700484%
+	f1: 		64.96134996414185%
+	l1: 		15.421012878417969
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.6978094577789307
+	cross ent: 	0.9796535292497048
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.14219474497682%
+	f1: 		64.14219737052917%
+	l1: 		15.421012878417969
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	80
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.3080017566681
+	cross ent: 	0.9731570075806386
+	cluster: 	124.47650116517018
+	separation:	0.00035431592901391095
+	avg separation:	0.0020867604356024027
+	accu: 		64.98228663446055%
+	f1: 		64.98228907585144%
+	l1: 		15.441597938537598
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.723886728286743
+	cross ent: 	0.9789148798355689
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.37403400309118%
+	f1: 		64.37403559684753%
+	l1: 		15.441597938537598
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	81
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.40755701065063
+	cross ent: 	0.9730853216155299
+	cluster: 	124.4765011307814
+	separation:	0.0003543422118565108
+	avg separation:	0.0020868741164759945
+	accu: 		64.95571658615137%
+	f1: 		64.95571732521057%
+	l1: 		15.464478492736816
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7264833450317383
+	cross ent: 	0.9801248953892634
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.14219474497682%
+	f1: 		64.14219737052917%
+	l1: 		15.464478492736816
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	82
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.36841225624084
+	cross ent: 	0.9729961931743856
+	cluster: 	124.47444047700645
+	separation:	0.0003542171228189953
+	avg separation:	0.0020865339028552483
+	accu: 		64.97906602254429%
+	f1: 		64.97906446456909%
+	l1: 		15.49203872680664
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7408370971679688
+	cross ent: 	0.9795591556108915
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.45131375579598%
+	f1: 		64.45131301879883%
+	l1: 		15.49203872680664
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	83
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.79323720932007
+	cross ent: 	0.9729152962383115
+	cluster: 	124.47650100305168
+	separation:	0.0003541827954658907
+	avg separation:	0.0020865054447437754
+	accu: 		64.92270531400966%
+	f1: 		64.92270827293396%
+	l1: 		15.523675918579102
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7505173683166504
+	cross ent: 	0.9786277023645548
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.37403400309118%
+	f1: 		64.37403559684753%
+	l1: 		15.523675918579102
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	84
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.099326133728
+	cross ent: 	0.9728678651801709
+	cluster: 	124.47444053595864
+	separation:	0.00035425531815643635
+	avg separation:	0.002086561408654906
+	accu: 		64.95571658615137%
+	f1: 		64.95571732521057%
+	l1: 		15.549859046936035
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.724722146987915
+	cross ent: 	0.9785138918803289
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.68315301391036%
+	f1: 		64.68315124511719%
+	l1: 		15.549859046936035
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	85
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.69312858581543
+	cross ent: 	0.9728791291531024
+	cluster: 	124.47547077933052
+	separation:	0.00035434859851219677
+	avg separation:	0.002086815068121047
+	accu: 		64.9500805152979%
+	f1: 		64.95007872581482%
+	l1: 		15.562569618225098
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.73555064201355
+	cross ent: 	0.980288103222847
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2194744976816%
+	f1: 		64.21947479248047%
+	l1: 		15.562569618225098
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	86
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.1960952281952
+	cross ent: 	0.9729228899391406
+	cluster: 	124.47237993622318
+	separation:	0.0003542792071422185
+	avg separation:	0.002086690566769375
+	accu: 		64.9573268921095%
+	f1: 		64.9573266506195%
+	l1: 		15.58319091796875
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7567105293273926
+	cross ent: 	0.9794619438739923
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.14219474497682%
+	f1: 		64.14219737052917%
+	l1: 		15.58319091796875
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	87
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.4832901954651
+	cross ent: 	0.9728257965826635
+	cluster: 	124.47547084319538
+	separation:	0.0003541971033882288
+	avg separation:	0.0020865394637295683
+	accu: 		64.94041867954911%
+	f1: 		64.94041681289673%
+	l1: 		15.609782218933105
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7541415691375732
+	cross ent: 	0.9773972917061585
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.76043276661515%
+	f1: 		64.76043462753296%
+	l1: 		15.609782218933105
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	88
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.32172894477844
+	cross ent: 	0.972684353993005
+	cluster: 	124.47650107182922
+	separation:	0.00035429535717726267
+	avg separation:	0.0020867605793786987
+	accu: 		64.9621578099839%
+	f1: 		64.96216058731079%
+	l1: 		15.62644100189209
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.739898204803467
+	cross ent: 	0.9789513338070649
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2194744976816%
+	f1: 		64.21947479248047%
+	l1: 		15.62644100189209
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	89
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.77517008781433
+	cross ent: 	0.9727240486906485
+	cluster: 	124.47444056052204
+	separation:	0.0003542570382059346
+	avg separation:	0.0020866562064085817
+	accu: 		64.92995169082126%
+	f1: 		64.92995023727417%
+	l1: 		15.65281867980957
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.790382146835327
+	cross ent: 	0.9777478782030252
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.37403400309118%
+	f1: 		64.37403559684753%
+	l1: 		15.65281867980957
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	90
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.7831223011017
+	cross ent: 	0.972540483348844
+	cluster: 	124.47650117499553
+	separation:	0.0003541679954934493
+	avg separation:	0.002086333545414804
+	accu: 		64.99436392914653%
+	f1: 		64.99436497688293%
+	l1: 		15.67042350769043
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.745187520980835
+	cross ent: 	0.9776687794006788
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.60587326120556%
+	f1: 		64.6058738231659%
+	l1: 		15.67042350769043
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	91
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.54560112953186
+	cross ent: 	0.9725474477658638
+	cluster: 	124.47650115043213
+	separation:	0.00035421964077235344
+	avg separation:	0.0020864932476713804
+	accu: 		64.92351046698873%
+	f1: 		64.92351293563843%
+	l1: 		15.68414306640625
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7337145805358887
+	cross ent: 	0.9775567123523126
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.45131375579598%
+	f1: 		64.45131301879883%
+	l1: 		15.68414306640625
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	92
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.5994725227356
+	cross ent: 	0.9725612787300744
+	cluster: 	124.47341015994434
+	separation:	0.0003542768117475173
+	avg separation:	0.0020867110982193044
+	accu: 		64.93961352657006%
+	f1: 		64.93961215019226%
+	l1: 		15.714611053466797
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7087411880493164
+	cross ent: 	0.9798054626354804
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2967542503864%
+	f1: 		64.29675221443176%
+	l1: 		15.714611053466797
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	93
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.9717221260071
+	cross ent: 	0.9724453203308144
+	cluster: 	124.47444052613326
+	separation:	0.00035428111021273815
+	avg separation:	0.0020866785436827887
+	accu: 		64.94041867954911%
+	f1: 		64.94041681289673%
+	l1: 		15.73621940612793
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.710636854171753
+	cross ent: 	0.9787121357826086
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.52859350850078%
+	f1: 		64.5285964012146%
+	l1: 		15.73621940612793
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	94
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	266.24378728866577
+	cross ent: 	0.9724042170752423
+	cluster: 	124.4754707842432
+	separation:	0.0003546287442502473
+	avg separation:	0.0020872716934654647
+	accu: 		64.94444444444444%
+	f1: 		64.94444608688354%
+	l1: 		15.751663208007812
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.739389181137085
+	cross ent: 	0.9774306026788858
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.37403400309118%
+	f1: 		64.37403559684753%
+	l1: 		15.751663208007812
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	95
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.77231788635254
+	cross ent: 	0.9722671465035492
+	cluster: 	124.47547081863198
+	separation:	0.0003542788379143089
+	avg separation:	0.002086736591750515
+	accu: 		64.92270531400966%
+	f1: 		64.92270827293396%
+	l1: 		15.774235725402832
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.747159957885742
+	cross ent: 	0.9789439703409488
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.45131375579598%
+	f1: 		64.45131301879883%
+	l1: 		15.774235725402832
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	96
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.6513981819153
+	cross ent: 	0.9722971766515462
+	cluster: 	124.47547079406856
+	separation:	0.00035439926039600156
+	avg separation:	0.0020870302574581925
+	accu: 		64.93880837359099%
+	f1: 		64.9388074874878%
+	l1: 		15.79041576385498
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7522449493408203
+	cross ent: 	0.9765160851753675
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.83771251931994%
+	f1: 		64.83771204948425%
+	l1: 		15.79041576385498
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	97
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	263.8443064689636
+	cross ent: 	0.9722408659981668
+	cluster: 	124.476501106218
+	separation:	0.0003543452821431317
+	avg separation:	0.0020867609111586177
+	accu: 		64.93236714975845%
+	f1: 		64.93236422538757%
+	l1: 		15.807865142822266
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.7536327838897705
+	cross ent: 	0.9784444799790015
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.14219474497682%
+	f1: 		64.14219737052917%
+	l1: 		15.807865142822266
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	98
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	264.76066493988037
+	cross ent: 	0.9721980496367868
+	cluster: 	124.47650120447163
+	separation:	0.00035417585599203434
+	avg separation:	0.002086461240279381
+	accu: 		64.914653784219%
+	f1: 		64.9146556854248%
+	l1: 		15.830429077148438
+	p dist pair: 	0.006313679739832878
+	test
+	time: 	3.711357355117798
+	cross ent: 	0.9778150583689029
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.52859350850078%
+	f1: 		64.5285964012146%
+	l1: 		15.830429077148438
+	p dist pair: 	0.006313679739832878
+	above 10.00%
+iteration: 	99
+	train
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	265.37897419929504
+	cross ent: 	0.972194452786246
+	cluster: 	124.47547084810806
+	separation:	0.00035418648004502775
+	avg separation:	0.0020864621749752264
+	accu: 		64.90821256038647%
+	f1: 		64.90821242332458%
+	l1: 		15.85343074798584
+	p dist pair: 	0.006313679739832878
+	test
+run_pruning.py:174: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	3.7143287658691406
+	cross ent: 	0.977520057788262
+	cluster: 	124.45538975642278
+	separation:	0.0003653599593375335
+	avg separation:	0.0021106350110270656
+	accu: 		64.2967542503864%
+	f1: 		64.29675221443176%
+	l1: 		15.85343074798584
+	p dist pair: 	0.006313679739832878
+	above 10.00%

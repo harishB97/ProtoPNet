@@ -1,0 +1,11 @@
+start load env and run python
+Resetting modules to system default
+Resetting modules to system default
+/cm/local/apps/slurm/var/spool/job1075774/slurm_script: line 21: activate: No such file or directory
+/home/harishbabu/.conda/envs/taming3/bin/python
+0
+Training model with phylo level as  1
+Traceback (most recent call last):
+  File "main.py", line 101, in <module>
+    log('Running:', experiment_run)
+TypeError: logger() takes 1 positional argument but 2 were given

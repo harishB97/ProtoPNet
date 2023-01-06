@@ -8,8 +8,8 @@ def makedir(path):
         os.makedirs(path)
 
 datasets_root_dir = '/home/harishbabu/data/Fish/phylo-VQVAE/'
-dir = datasets_root_dir + 'train_padded_256/'
-target_dir = datasets_root_dir + 'train_padded_256_augmented/'
+dir = datasets_root_dir + 'train_padded_512/'
+target_dir = datasets_root_dir + 'train_padded_512_augmented/'
 
 makedir(target_dir)
 folders = [os.path.join(dir, folder) for folder in next(os.walk(dir))[1]]
