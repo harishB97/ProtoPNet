@@ -1,0 +1,1 @@
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/032-fish-spc-256-vgg19-10ppc-30ep/ -model 10_15push0.9096.pth -imgdir /home/harishbabu/data/Fish/phylo-VQVAE/train_global_mean_padded_256/Alosa chrysochloris/ -img INHS_FISH_38490.JPG -imgclass 0

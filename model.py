@@ -33,7 +33,8 @@ class PPNet(nn.Module):
     def __init__(self, features, img_size, prototype_shape,
                  proto_layer_rf_info, num_classes, init_weights=True,
                  prototype_activation_function='log',
-                 add_on_layers_type='bottleneck'):
+                 add_on_layers_type='bottleneck',
+                 ckpt_path=None):
 
         super(PPNet, self).__init__()
         self.img_size = img_size
@@ -115,6 +116,10 @@ class PPNet(nn.Module):
 
         if init_weights:
             self._initialize_weights()
+
+        if ckpt_path is not None:
+            self.init_from_ckpt(ckpt_path, ignore_keys=[])
+            print('Loaded trained model at', ckpt_path)
 
     def conv_features(self, x):
         '''

@@ -15,13 +15,7 @@ import os
 import copy
 
 from helpers import makedir, find_high_activation_crop
-import model
-import push
 import train_and_test as tnt
-import save
-from log import create_logger
-from preprocess import mean, std, preprocess_input_function, undo_preprocess_input_function
-
 try:
     from settings import phylo_level
 except:
@@ -30,6 +24,11 @@ except:
 if phylo_level is not None:
     tnt.PHYLO_LEVEL = phylo_level
     tnt.print_phylo_level()
+import model
+import push
+import save
+from log import create_logger
+from preprocess import mean, std, preprocess_input_function, undo_preprocess_input_function
 
 import argparse
 
@@ -67,8 +66,12 @@ load_model_name = args.model[0] #'10_18push0.7822.pth'
 model_base_architecture = load_model_dir.split('/')[2]
 experiment_run = '/'.join(load_model_dir.split('/')[3:])
 
-save_analysis_path = os.path.join(test_image_dir, model_base_architecture,
-                                  experiment_run, load_model_name)
+# save_analysis_path = os.path.join(test_image_dir, model_base_architecture,
+#                                   experiment_run, load_model_name)
+
+save_analysis_path = os.path.join(load_model_dir, 'local_analysis', load_model_name,
+                                  test_image_name.split('.')[0])
+
 makedir(save_analysis_path)
 
 log, logclose = create_logger(log_filename=os.path.join(save_analysis_path, 'local_analysis.log'))
@@ -145,20 +148,28 @@ def save_preprocessed_img(fname, preprocessed_imgs, index=0):
     return undo_preprocessed_img
 
 def save_prototype(fname, epoch, index):
-    p_img = plt.imread(os.path.join(load_img_dir, 'epoch-'+str(epoch), 'prototype-img'+str(index)+'.png'))
+    import glob
+    file = glob.glob(os.path.join(load_img_dir, 'epoch-'+str(epoch), '*prototype-img'+str(index)+'.png'))[0]
+    p_img = plt.imread(file)
     #plt.axis('off')
     plt.imsave(fname, p_img)
     
 def save_prototype_self_activation(fname, epoch, index):
-    p_img = plt.imread(os.path.join(load_img_dir, 'epoch-'+str(epoch),
-                                    'prototype-img-original_with_self_act'+str(index)+'.png'))
+    import glob
+    file = glob.glob(os.path.join(load_img_dir, 'epoch-'+str(epoch),
+                                    '*prototype-img-original_with_self_act'+str(index)+'.png'))[0]
+    p_img = plt.imread(file)
     #plt.axis('off')
     plt.imsave(fname, p_img)
 
 def save_prototype_original_img_with_bbox(fname, epoch, index,
                                           bbox_height_start, bbox_height_end,
                                           bbox_width_start, bbox_width_end, color=(0, 255, 255)):
-    p_img_bgr = cv2.imread(os.path.join(load_img_dir, 'epoch-'+str(epoch), 'prototype-img-original'+str(index)+'.png'))
+    import glob
+    file = glob.glob(os.path.join(load_img_dir, 'epoch-'+str(epoch), '*prototype-img-original'+str(index)+'.png'))[0]
+    p_img_bgr = cv2.imread(file)
+    if p_img_bgr is None:
+        breakpoint()
     cv2.rectangle(p_img_bgr, (bbox_width_start, bbox_height_start), (bbox_width_end-1, bbox_height_end-1),
                   color, thickness=2)
     p_img_rgb = p_img_bgr[...,::-1]
@@ -279,7 +290,7 @@ for i in range(1,11):
     log('--------------------------------------------------------------')
 
 ##### PROTOTYPES FROM TOP-k CLASSES
-k = 50
+k = 38
 log('Prototypes from top-%d classes:' % k)
 topk_logits, topk_classes = torch.topk(logits[idx], k=k)
 for i,c in enumerate(topk_classes.detach().cpu().numpy()):
@@ -360,4 +371,6 @@ else:
     log('Prediction is wrong.')
 
 logclose()
+
+# breakpoint()
 

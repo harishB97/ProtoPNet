@@ -1,10 +1,9 @@
 #!/bin/bash
 
 #SBATCH --account=ml4science
-#SBATCH --partition=dgx_normal_q
+#SBATCH --partition=v100_normal_q
 #SBATCH --time=1-00:00:00 
 #SBATCH --gres=gpu:1
-#SBATCH --nodes=1 --ntasks-per-node=1 --cpus-per-task=8
 #SBATCH -o ./SLURM/slurm-%j.out
 
 
