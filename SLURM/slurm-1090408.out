@@ -1,0 +1,1446 @@
+start load env and run python
+Resetting modules to system default
+Resetting modules to system default
+/cm/local/apps/slurm/var/spool/job1090408/slurm_script: line 21: activate: No such file or directory
+/home/harishbabu/.conda/envs/taming3/bin/python
+0
+Running: 045-fish-pad1-spc-256-vgg19-10ppc-20ep
+training set size: 124200
+push set size: 4140
+test set size: 1294
+batch size: 80
+start training
+epoch: 	0
+	warm
+	train
+	time: 	267.11530089378357
+	cross ent: 	2.1780274879986137
+	cluster: 	0.41179847391052393
+	separation:	0.28021582301660497
+	avg separation:	8.02585292829672
+	accu: 		36.32367149758454%
+	f1: 		36.32367253303528%
+	l1: 		7410.0
+	p dist pair: 	14.677507400512695
+	test
+	time: 	3.6967732906341553
+	cross ent: 	1.6307693536464984
+	cluster: 	0.10272071223992568
+	separation:	0.04805550208458534
+	avg separation:	6.414212226867676
+	accu: 		49.304482225656876%
+	f1: 		49.30448234081268%
+	l1: 		7410.0
+	p dist pair: 	14.677507400512695
+	above 10.00%
+Time elapsed: 271.1806163787842 seconds
+epoch: 	1
+	warm
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	267.0270326137543
+	cross ent: 	1.1689463531057527
+	cluster: 	0.09132737942706824
+	separation:	0.0515821184950994
+	avg separation:	5.905383385770642
+	accu: 		62.69323671497584%
+	f1: 		62.693238258361816%
+	l1: 		7410.0
+	p dist pair: 	12.633193016052246
+	test
+	time: 	3.7180886268615723
+	cross ent: 	1.2458552855711718
+	cluster: 	0.07613997276012714
+	separation:	0.040794381441978306
+	avg separation:	5.447657805222732
+	accu: 		59.04173106646059%
+	f1: 		59.04173254966736%
+	l1: 		7410.0
+	p dist pair: 	12.633193016052246
+	above 10.00%
+Time elapsed: 542.5352754592896 seconds
+epoch: 	2
+	warm
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	267.4605839252472
+	cross ent: 	0.9429177065396109
+	cluster: 	0.07571173858446839
+	separation:	0.04242979053405509
+	avg separation:	5.2609358085637234
+	accu: 		69.71980676328502%
+	f1: 		69.71980929374695%
+	l1: 		7410.0
+	p dist pair: 	11.916139602661133
+	test
+	time: 	3.7149770259857178
+	cross ent: 	1.195144222332881
+	cluster: 	0.06734494463755535
+	separation:	0.03749400950395144
+	avg separation:	5.163427022787241
+	accu: 		62.05564142194745%
+	f1: 		62.055641412734985%
+	l1: 		7410.0
+	p dist pair: 	11.916139602661133
+	above 10.00%
+Time elapsed: 814.0770883560181 seconds
+epoch: 	3
+	warm
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	267.43542861938477
+	cross ent: 	0.8465889607677902
+	cluster: 	0.06841710148198099
+	separation:	0.037824285400735125
+	avg separation:	5.164694010482169
+	accu: 		72.83574879227052%
+	f1: 		72.83574938774109%
+	l1: 		7410.0
+	p dist pair: 	11.751481056213379
+	test
+	time: 	3.7204489707946777
+	cross ent: 	1.1010332382642305
+	cluster: 	0.0660560606763913
+	separation:	0.032789602875709534
+	avg separation:	5.153661141028771
+	accu: 		64.60587326120556%
+	f1: 		64.6058738231659%
+	l1: 		7410.0
+	p dist pair: 	11.751481056213379
+	above 10.00%
+Time elapsed: 1085.6350910663605 seconds
+epoch: 	4
+	warm
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	267.4417757987976
+	cross ent: 	0.7929578935685498
+	cluster: 	0.0644220509263522
+	separation:	0.03551081645842798
+	avg separation:	5.0620111104986085
+	accu: 		74.32045088566828%
+	f1: 		74.32045340538025%
+	l1: 		7410.0
+	p dist pair: 	11.406169891357422
+	test
+	time: 	3.8791542053222656
+	cross ent: 	1.1558554195440733
+	cluster: 	0.06249061914590689
+	separation:	0.030674887964358695
+	avg separation:	4.943101002619817
+	accu: 		63.52395672333848%
+	f1: 		63.52395415306091%
+	l1: 		7410.0
+	p dist pair: 	11.406169891357422
+	above 10.00%
+Time elapsed: 1357.7068445682526 seconds
+epoch: 	5
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+/home/harishbabu/.conda/envs/taming3/lib/python3.8/site-packages/torch/optim/lr_scheduler.py:131: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn("Detected call of `lr_scheduler.step()` before `optimizer.step()`. "
+	time: 	878.4166171550751
+	cross ent: 	0.45439391862421136
+	cluster: 	0.05665894342299745
+	separation:	0.036049593176455244
+	avg separation:	5.057935956057164
+	accu: 		85.32528180354268%
+	f1: 		85.32528281211853%
+	l1: 		7410.0
+	p dist pair: 	10.797694206237793
+	test
+	time: 	3.7097787857055664
+	cross ent: 	0.559965981886937
+	cluster: 	0.04011763933186348
+	separation:	0.0261764397414831
+	avg separation:	4.947824294750507
+	accu: 		83.53941267387944%
+	f1: 		83.53941440582275%
+	l1: 		7410.0
+	p dist pair: 	10.797694206237793
+	above 10.00%
+Time elapsed: 2240.3211238384247 seconds
+epoch: 	6
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	878.4456129074097
+	cross ent: 	0.14547541936774333
+	cluster: 	0.03506079948694953
+	separation:	0.023654024523886187
+	avg separation:	4.743225449220027
+	accu: 		95.49114331723028%
+	f1: 		95.49114108085632%
+	l1: 		7410.0
+	p dist pair: 	10.025022506713867
+	test
+	time: 	3.721675395965576
+	cross ent: 	0.6695918268882312
+	cluster: 	0.05140321615796823
+	separation:	0.0308352427986952
+	avg separation:	4.597533556131216
+	accu: 		81.22102009273571%
+	f1: 		81.2210202217102%
+	l1: 		7410.0
+	p dist pair: 	10.025022506713867
+	above 10.00%
+Time elapsed: 3123.011603832245 seconds
+epoch: 	7
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	878.2867529392242
+	cross ent: 	0.10845398607514486
+	cluster: 	0.03401232982283435
+	separation:	0.022196423562204002
+	avg separation:	4.43410334491914
+	accu: 		96.74959742351047%
+	f1: 		96.74959778785706%
+	l1: 		7410.0
+	p dist pair: 	9.280243873596191
+	test
+	time: 	3.70182466506958
+	cross ent: 	0.4646437466144562
+	cluster: 	0.035580593161284924
+	separation:	0.023770465300633356
+	avg separation:	4.240510793832632
+	accu: 		89.48995363214837%
+	f1: 		89.48995471000671%
+	l1: 		7410.0
+	p dist pair: 	9.280243873596191
+	above 10.00%
+Time elapsed: 4005.435839653015 seconds
+epoch: 	8
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	878.1025311946869
+	cross ent: 	0.09603215803686681
+	cluster: 	0.03345097317039506
+	separation:	0.02320762384618127
+	avg separation:	4.211401802144048
+	accu: 		97.22302737520128%
+	f1: 		97.22302556037903%
+	l1: 		7410.0
+	p dist pair: 	9.230110168457031
+	test
+	time: 	3.684194803237915
+	cross ent: 	0.6394789860798762
+	cluster: 	0.04813909172438658
+	separation:	0.03218783968343185
+	avg separation:	4.275415897369385
+	accu: 		85.7032457496136%
+	f1: 		85.70324182510376%
+	l1: 		7410.0
+	p dist pair: 	9.230110168457031
+	above 10.00%
+Time elapsed: 4887.74169754982 seconds
+epoch: 	9
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	877.6537697315216
+	cross ent: 	0.004688898648326479
+	cluster: 	0.013176964916749417
+	separation:	0.019003856698073883
+	avg separation:	4.267459135859994
+	accu: 		99.89533011272141%
+	f1: 		99.89532828330994%
+	l1: 		7410.0
+	p dist pair: 	9.131597518920898
+	test
+	time: 	3.6684446334838867
+	cross ent: 	0.4746696421733269
+	cluster: 	0.012439879051481303
+	separation:	0.012759622938644428
+	avg separation:	4.258541290576641
+	accu: 		91.19010819165379%
+	f1: 		91.190105676651%
+	l1: 		7410.0
+	p dist pair: 	9.131597518920898
+	above 10.00%
+Time elapsed: 5769.518402814865 seconds
+epoch: 	10
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	877.8299853801727
+	cross ent: 	0.0013770584963742098
+	cluster: 	0.005611928420636686
+	separation:	0.011789524239288248
+	avg separation:	4.2411283804997275
+	accu: 		99.97987117552334%
+	f1: 		99.97987151145935%
+	l1: 		7410.0
+	p dist pair: 	9.020758628845215
+	test
+	time: 	3.679171085357666
+	cross ent: 	0.5102699272907697
+	cluster: 	0.009446813223453669
+	separation:	0.009660570810620602
+	avg separation:	4.216376451345591
+	accu: 		91.112828438949%
+	f1: 		91.11283421516418%
+	l1: 		7410.0
+	p dist pair: 	9.020758628845215
+	above 10.00%
+	push
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	Executing push ...
+	push time: 	74.63102436065674
+	test
+	time: 	3.685641288757324
+	cross ent: 	1.1127864993535554
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		87.63523956723338%
+	f1: 		87.63523697853088%
+	l1: 		7410.0
+	p dist pair: 	3.194477081298828
+	above 10.00%
+	last layer
+iteration: 	0
+	train
+	time: 	263.27404737472534
+	cross ent: 	0.006315520019954441
+	cluster: 	0.003639518776554698
+	separation:	0.003750640992794836
+	avg separation:	1.384393968738745
+	accu: 		99.81239935587762%
+	f1: 		99.81240034103394%
+	l1: 		6926.5810546875
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.680388927459717
+	cross ent: 	0.8253471702337265
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		89.87635239567233%
+	f1: 		89.87635374069214%
+	l1: 		6926.5810546875
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	1
+	train
+	time: 	263.4052610397339
+	cross ent: 	0.001772720696189186
+	cluster: 	0.0036399268988383175
+	separation:	0.003750821599809972
+	avg separation:	1.3844026124485063
+	accu: 		99.9573268921095%
+	f1: 		99.9573290348053%
+	l1: 		6355.203125
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.6650500297546387
+	cross ent: 	0.7945321351289749
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.03091190108191%
+	f1: 		90.0309145450592%
+	l1: 		6355.203125
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	2
+	train
+	time: 	263.35360765457153
+	cross ent: 	0.0015356944638950556
+	cluster: 	0.0036397222855295663
+	separation:	0.0037505453805087153
+	avg separation:	1.3843947407973634
+	accu: 		99.97101449275362%
+	f1: 		99.97101426124573%
+	l1: 		5669.265625
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.6692469120025635
+	cross ent: 	0.74827485703505
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.1854714064915%
+	f1: 		90.18546938896179%
+	l1: 		5669.265625
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	3
+	train
+	time: 	263.32832622528076
+	cross ent: 	0.0014723881551562768
+	cluster: 	0.003640070647848032
+	separation:	0.0037506538921822023
+	avg separation:	1.3843966945861894
+	accu: 		99.9645732689211%
+	f1: 		99.96457099914551%
+	l1: 		4919.3056640625
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.8300235271453857
+	cross ent: 	0.7185313243132371
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.1081916537867%
+	f1: 		90.10818600654602%
+	l1: 		4919.3056640625
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	4
+	train
+	time: 	263.1676788330078
+	cross ent: 	0.0017550067524377615
+	cluster: 	0.0036399973298831385
+	separation:	0.003750802868712125
+	avg separation:	1.3843997365339908
+	accu: 		99.96296296296296%
+	f1: 		99.96296167373657%
+	l1: 		4212.1220703125
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.689950704574585
+	cross ent: 	0.7115409133525995
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.34003091190108%
+	f1: 		90.34003019332886%
+	l1: 		4212.1220703125
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	5
+	train
+	time: 	263.2815670967102
+	cross ent: 	0.0018918291638292501
+	cluster: 	0.003639937702749891
+	separation:	0.003750872015215442
+	avg separation:	1.3844003519241226
+	accu: 		99.96779388083736%
+	f1: 		99.96779561042786%
+	l1: 		3620.786865234375
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.695024013519287
+	cross ent: 	0.6907787770032883
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.1854714064915%
+	f1: 		90.18546938896179%
+	l1: 		3620.786865234375
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	6
+	train
+	time: 	263.1926808357239
+	cross ent: 	0.0020412119601497724
+	cluster: 	0.0036396105746460956
+	separation:	0.003751078594766236
+	avg separation:	1.3844046595782828
+	accu: 		99.9694041867955%
+	f1: 		99.96940493583679%
+	l1: 		3129.135009765625
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.694570541381836
+	cross ent: 	0.684336305810855
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.1081916537867%
+	f1: 		90.10818600654602%
+	l1: 		3129.135009765625
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	7
+	train
+	time: 	263.20548605918884
+	cross ent: 	0.002036705551150099
+	cluster: 	0.003639594245017179
+	separation:	0.0037506617505537526
+	avg separation:	1.3844037905709634
+	accu: 		99.97101449275362%
+	f1: 		99.97101426124573%
+	l1: 		2732.43701171875
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.681532144546509
+	cross ent: 	0.6696307326738651
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.1854714064915%
+	f1: 		90.18546938896179%
+	l1: 		2732.43701171875
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	8
+	train
+	time: 	263.0891103744507
+	cross ent: 	0.0021338665610200593
+	cluster: 	0.003639955451551295
+	separation:	0.003750746311555111
+	avg separation:	1.3844008782719
+	accu: 		99.96779388083736%
+	f1: 		99.96779561042786%
+	l1: 		2408.56494140625
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.6841318607330322
+	cross ent: 	0.6595231065383325
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.26275115919628%
+	f1: 		90.26274681091309%
+	l1: 		2408.56494140625
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	9
+	train
+	time: 	263.19867062568665
+	cross ent: 	0.0020972902511916247
+	cluster: 	0.0036397060711915482
+	separation:	0.0037507916875939196
+	avg separation:	1.3843982159822739
+	accu: 		99.97423510466989%
+	f1: 		99.9742329120636%
+	l1: 		2141.1982421875
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.6850578784942627
+	cross ent: 	0.6452531814575195
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.41731066460588%
+	f1: 		90.41731357574463%
+	l1: 		2141.1982421875
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	10
+	train
+	time: 	263.23070526123047
+	cross ent: 	0.0020516451774411472
+	cluster: 	0.003639647983019381
+	separation:	0.003750688340622843
+	avg separation:	1.384403402622638
+	accu: 		99.97262479871175%
+	f1: 		99.97262358665466%
+	l1: 		1926.1654052734375
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.664992332458496
+	cross ent: 	0.6474705808437787
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.26275115919628%
+	f1: 		90.26274681091309%
+	l1: 		1926.1654052734375
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	11
+	train
+	time: 	263.139680147171
+	cross ent: 	0.0019595155514435555
+	cluster: 	0.0036397943152048783
+	separation:	0.0037506718232901497
+	avg separation:	1.384397566663935
+	accu: 		99.97584541062801%
+	f1: 		99.97584819793701%
+	l1: 		1741.7501220703125
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.7515110969543457
+	cross ent: 	0.6339300549947299
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.1081916537867%
+	f1: 		90.10818600654602%
+	l1: 		1741.7501220703125
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	12
+	train
+	time: 	263.2449333667755
+	cross ent: 	0.001919261743087009
+	cluster: 	0.003639803029937431
+	separation:	0.003750781128356918
+	avg separation:	1.3843956699850324
+	accu: 		99.97342995169082%
+	f1: 		99.97342824935913%
+	l1: 		1580.5152587890625
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.672973871231079
+	cross ent: 	0.6302812013488549
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.26275115919628%
+	f1: 		90.26274681091309%
+	l1: 		1580.5152587890625
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	13
+	train
+	time: 	263.33413100242615
+	cross ent: 	0.0018813387754127884
+	cluster: 	0.003639890234383676
+	separation:	0.003750883680735328
+	avg separation:	1.384402939525636
+	accu: 		99.97342995169082%
+	f1: 		99.97342824935913%
+	l1: 		1443.9111328125
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.694028615951538
+	cross ent: 	0.6227746399549338
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.1854714064915%
+	f1: 		90.18546938896179%
+	l1: 		1443.9111328125
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	14
+	train
+	time: 	263.3975040912628
+	cross ent: 	0.0017333214010377314
+	cluster: 	0.0036396509213630934
+	separation:	0.003750900388320492
+	avg separation:	1.3844048907046003
+	accu: 		99.97987117552334%
+	f1: 		99.97987151145935%
+	l1: 		1329.53125
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.711036443710327
+	cross ent: 	0.618397939663667
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.34003091190108%
+	f1: 		90.34003019332886%
+	l1: 		1329.53125
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	15
+	train
+	time: 	263.46562671661377
+	cross ent: 	0.0016944741853704443
+	cluster: 	0.003639821642745917
+	separation:	0.00375100895441608
+	avg separation:	1.384404321294098
+	accu: 		99.97504025764896%
+	f1: 		99.97503757476807%
+	l1: 		1227.89306640625
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.7326292991638184
+	cross ent: 	0.6222135825799062
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.03091190108191%
+	f1: 		90.0309145450592%
+	l1: 		1227.89306640625
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	16
+	train
+	time: 	263.5070662498474
+	cross ent: 	0.0015946922697467115
+	cluster: 	0.003639886733528325
+	separation:	0.003750859237265823
+	avg separation:	1.3843976210104751
+	accu: 		99.97826086956522%
+	f1: 		99.97826218605042%
+	l1: 		1136.758544921875
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.691113233566284
+	cross ent: 	0.6170817395815482
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.1081916537867%
+	f1: 		90.10818600654602%
+	l1: 		1136.758544921875
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	17
+	train
+	time: 	263.32548999786377
+	cross ent: 	0.0015380140281986835
+	cluster: 	0.0036400150149672053
+	separation:	0.0037507985047492303
+	avg separation:	1.3843990423106718
+	accu: 		99.97665056360708%
+	f1: 		99.97665286064148%
+	l1: 		1057.043701171875
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.6911909580230713
+	cross ent: 	0.614647450355383
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.41731066460588%
+	f1: 		90.41731357574463%
+	l1: 		1057.043701171875
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	18
+	train
+	time: 	263.1117241382599
+	cross ent: 	0.0014672796392371716
+	cluster: 	0.0036396209601221724
+	separation:	0.0037505890426261343
+	avg separation:	1.384402608303431
+	accu: 		99.98148148148148%
+	f1: 		99.98148083686829%
+	l1: 		985.6784057617188
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.6901512145996094
+	cross ent: 	0.6137784180732874
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		89.95363214837712%
+	f1: 		89.95363116264343%
+	l1: 		985.6784057617188
+	p dist pair: 	3.194477081298828
+	above 10.00%
+iteration: 	19
+	train
+	time: 	263.5193121433258
+	cross ent: 	0.0014022783466905034
+	cluster: 	0.003639839081356334
+	separation:	0.003750551519561643
+	avg separation:	1.3843897234142326
+	accu: 		99.98148148148148%
+	f1: 		99.98148083686829%
+	l1: 		921.6878051757812
+	p dist pair: 	3.194477081298828
+	test
+	time: 	3.6934587955474854
+	cross ent: 	0.6072879198652047
+	cluster: 	0.005408978376251001
+	separation:	0.003534987694225632
+	avg separation:	1.3829060609524066
+	accu: 		90.1854714064915%
+	f1: 		90.18546938896179%
+	l1: 		921.6878051757812
+	p dist pair: 	3.194477081298828
+	above 10.00%
+Time elapsed: 12078.453921556473 seconds
+epoch: 	11
+	joint
+	train
+	time: 	878.3720452785492
+	cross ent: 	0.003187333418400808
+	cluster: 	0.0036185719658268635
+	separation:	0.004630991905395131
+	avg separation:	1.3672849986910898
+	accu: 		99.9243156199678%
+	f1: 		99.92431402206421%
+	l1: 		921.6878051757812
+	p dist pair: 	3.0948262214660645
+	test
+	time: 	3.697923183441162
+	cross ent: 	0.5357245063552489
+	cluster: 	0.005062058245619902
+	separation:	0.004395181832548518
+	avg separation:	1.3505228757858276
+	accu: 		91.19010819165379%
+	f1: 		91.190105676651%
+	l1: 		921.6878051757812
+	p dist pair: 	3.0948262214660645
+	above 10.00%
+Time elapsed: 12960.962966918945 seconds
+epoch: 	12
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	878.5831923484802
+	cross ent: 	0.004231497156541987
+	cluster: 	0.0034187287349327056
+	separation:	0.006131125916891802
+	avg separation:	1.3220227124686403
+	accu: 		99.89371980676329%
+	f1: 		99.893718957901%
+	l1: 		921.6878051757812
+	p dist pair: 	2.979274272918701
+	test
+	time: 	3.697532892227173
+	cross ent: 	0.5396022452757909
+	cluster: 	0.005325018284985652
+	separation:	0.006046551028982951
+	avg separation:	1.303132598216717
+	accu: 		90.57187017001546%
+	f1: 		90.57186841964722%
+	l1: 		921.6878051757812
+	p dist pair: 	2.979274272918701
+	above 10.00%
+Time elapsed: 13843.658554792404 seconds
+epoch: 	13
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	878.4378235340118
+	cross ent: 	0.004651406359501966
+	cluster: 	0.00314744634031158
+	separation:	0.006032038232520299
+	avg separation:	1.2771277331722528
+	accu: 		99.88969404186795%
+	f1: 		99.88969564437866%
+	l1: 		921.6878051757812
+	p dist pair: 	2.8779358863830566
+	test
+	time: 	3.692169666290283
+	cross ent: 	0.5034048047203284
+	cluster: 	0.004949131479056982
+	separation:	0.007108279718802526
+	avg separation:	1.2479253915640025
+	accu: 		91.65378670788253%
+	f1: 		91.6537880897522%
+	l1: 		921.6878051757812
+	p dist pair: 	2.8779358863830566
+	above 10.00%
+Time elapsed: 14726.263904809952 seconds
+epoch: 	14
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	878.66663813591
+	cross ent: 	0.0005261467181489272
+	cluster: 	0.0023389876287470105
+	separation:	0.00638569806716228
+	avg separation:	1.2511959590224089
+	accu: 		99.99436392914653%
+	f1: 		99.99436140060425%
+	l1: 		921.6878051757812
+	p dist pair: 	2.868488073348999
+	test
+	time: 	3.676621675491333
+	cross ent: 	0.4982250378682063
+	cluster: 	0.003965708122660334
+	separation:	0.005960584161444926
+	avg separation:	1.250306670482342
+	accu: 		91.42194744976815%
+	f1: 		91.42194986343384%
+	l1: 		921.6878051757812
+	p dist pair: 	2.868488073348999
+	above 10.00%
+Time elapsed: 15609.086983203888 seconds
+epoch: 	15
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	878.4469621181488
+	cross ent: 	0.0003028631545653687
+	cluster: 	0.0018006425165899304
+	separation:	0.0060540752899782046
+	avg separation:	1.2464360017893166
+	accu: 		100.0%
+	f1: 		100.0%
+	l1: 		921.6878051757812
+	p dist pair: 	2.8498635292053223
+	test
+	time: 	3.70176362991333
+	cross ent: 	0.5010408504078021
+	cluster: 	0.0037294119292010483
+	separation:	0.006070356233976781
+	avg separation:	1.2408309624745295
+	accu: 		91.19010819165379%
+	f1: 		91.190105676651%
+	l1: 		921.6878051757812
+	p dist pair: 	2.8498635292053223
+	above 10.00%
+Time elapsed: 16491.620408058167 seconds
+epoch: 	16
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	878.8985888957977
+	cross ent: 	0.000321875590945681
+	cluster: 	0.0015902726407866284
+	separation:	0.006095646154039515
+	avg separation:	1.2348988017802536
+	accu: 		100.0%
+	f1: 		100.0%
+	l1: 		921.6878051757812
+	p dist pair: 	2.818643093109131
+	test
+	time: 	3.6945626735687256
+	cross ent: 	0.5349604378526027
+	cluster: 	0.0035088355473887464
+	separation:	0.006080049242322834
+	avg separation:	1.2278448068178618
+	accu: 		91.49922720247295%
+	f1: 		91.49922728538513%
+	l1: 		921.6878051757812
+	p dist pair: 	2.818643093109131
+	above 10.00%
+Time elapsed: 17374.687371492386 seconds
+epoch: 	17
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	877.318761587143
+	cross ent: 	0.0004443899295412546
+	cluster: 	0.0014843345309097347
+	separation:	0.006182080124554639
+	avg separation:	1.2186519313610835
+	accu: 		99.99919484702093%
+	f1: 		99.99919533729553%
+	l1: 		921.6878051757812
+	p dist pair: 	2.779876470565796
+	test
+	time: 	3.654385566711426
+	cross ent: 	0.5730176235620792
+	cluster: 	0.0036247867034175075
+	separation:	0.006543934855681772
+	avg separation:	1.1987795279576228
+	accu: 		90.88098918083463%
+	f1: 		90.88099002838135%
+	l1: 		921.6878051757812
+	p dist pair: 	2.779876470565796
+	above 10.00%
+Time elapsed: 18256.418036699295 seconds
+epoch: 	18
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	876.998117685318
+	cross ent: 	0.0005010300851840244
+	cluster: 	0.0014428387665374508
+	separation:	0.006275053676823484
+	avg separation:	1.1988799978054805
+	accu: 		99.9951690821256%
+	f1: 		99.9951720237732%
+	l1: 		921.6878051757812
+	p dist pair: 	2.74285626411438
+	test
+	time: 	3.6441805362701416
+	cross ent: 	0.5413077593995974
+	cluster: 	0.003452935148603641
+	separation:	0.00649665508311815
+	avg separation:	1.1911468047362108
+	accu: 		91.19010819165379%
+	f1: 		91.190105676651%
+	l1: 		921.6878051757812
+	p dist pair: 	2.74285626411438
+	above 10.00%
+Time elapsed: 19137.493730306625 seconds
+epoch: 	19
+	joint
+	train
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	877.1595418453217
+	cross ent: 	0.0003522741742221775
+	cluster: 	0.0013879558231312174
+	separation:	0.006419123770040625
+	avg separation:	1.190005238410817
+	accu: 		100.0%
+	f1: 		100.0%
+	l1: 		921.6878051757812
+	p dist pair: 	2.73883056640625
+	test
+	time: 	3.6843435764312744
+	cross ent: 	0.536500344482752
+	cluster: 	0.0033484402990255216
+	separation:	0.006550472623740251
+	avg separation:	1.1893029854847834
+	accu: 		90.95826893353942%
+	f1: 		90.95826745033264%
+	l1: 		921.6878051757812
+	p dist pair: 	2.73883056640625
+	above 10.00%
+	push
+main.py:184: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	Executing push ...
+	push time: 	68.07878851890564
+	test
+	time: 	3.6562106609344482
+	cross ent: 	0.6851404939706509
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		89.56723338485317%
+	f1: 		89.56723213195801%
+	l1: 		921.6878051757812
+	p dist pair: 	2.170584201812744
+	above 10.00%
+	last layer
+iteration: 	0
+	train
+	time: 	260.71343994140625
+	cross ent: 	0.0007233019926863758
+	cluster: 	0.0013323497327454796
+	separation:	0.0015187546198093798
+	avg separation:	0.9364514207348698
+	accu: 		99.99355877616748%
+	f1: 		99.99355673789978%
+	l1: 		859.4451904296875
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6772549152374268
+	cross ent: 	0.587232075058497
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.112828438949%
+	f1: 		91.11283421516418%
+	l1: 		859.4451904296875
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	1
+	train
+	time: 	260.85274720191956
+	cross ent: 	0.0004867539262620336
+	cluster: 	0.0013323553805752236
+	separation:	0.0015187040796678535
+	avg separation:	0.9364480465669749
+	accu: 		99.99838969404186%
+	f1: 		99.99839067459106%
+	l1: 		784.6726684570312
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.659605026245117
+	cross ent: 	0.5757064790679858
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		90.88098918083463%
+	f1: 		90.88099002838135%
+	l1: 		784.6726684570312
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	2
+	train
+	time: 	260.94263315200806
+	cross ent: 	0.0004820125143506388
+	cluster: 	0.0013325021488496678
+	separation:	0.0015185923166111284
+	avg separation:	0.9364508733930544
+	accu: 		99.9975845410628%
+	f1: 		99.9975860118866%
+	l1: 		710.8193969726562
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6896255016326904
+	cross ent: 	0.5636551110790327
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.26738794435857%
+	f1: 		91.26739501953125%
+	l1: 		710.8193969726562
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	3
+	train
+	time: 	260.87994360923767
+	cross ent: 	0.000500678430981988
+	cluster: 	0.001332211134457842
+	separation:	0.0015187343553350896
+	avg separation:	0.9364570388084676
+	accu: 		99.99838969404186%
+	f1: 		99.99839067459106%
+	l1: 		647.845947265625
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6679985523223877
+	cross ent: 	0.5609098925040319
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.03554868624421%
+	f1: 		91.03555083274841%
+	l1: 		647.845947265625
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	4
+	train
+	time: 	260.8455936908722
+	cross ent: 	0.0004965197677854783
+	cluster: 	0.0013322487767112334
+	separation:	0.0015187272937675724
+	avg separation:	0.9364556139772812
+	accu: 		99.99838969404186%
+	f1: 		99.99839067459106%
+	l1: 		594.1767578125
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.7019381523132324
+	cross ent: 	0.5570559902833059
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.03554868624421%
+	f1: 		91.03555083274841%
+	l1: 		594.1767578125
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	5
+	train
+	time: 	261.35318183898926
+	cross ent: 	0.00047983024714801564
+	cluster: 	0.0013325891043860117
+	separation:	0.0015186963435586277
+	avg separation:	0.9364513807809514
+	accu: 		99.99919484702093%
+	f1: 		99.99919533729553%
+	l1: 		548.138916015625
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6566524505615234
+	cross ent: 	0.5592574763756532
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.03554868624421%
+	f1: 		91.03555083274841%
+	l1: 		548.138916015625
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	6
+	train
+	time: 	260.9692678451538
+	cross ent: 	0.00047303216824618773
+	cluster: 	0.0013323217311125015
+	separation:	0.0015186860882158404
+	avg separation:	0.9364476012016831
+	accu: 		99.99838969404186%
+	f1: 		99.99839067459106%
+	l1: 		507.83343505859375
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6589722633361816
+	cross ent: 	0.5552319912956312
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.112828438949%
+	f1: 		91.11283421516418%
+	l1: 		507.83343505859375
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	7
+	train
+	time: 	260.8463318347931
+	cross ent: 	0.0004392237547064457
+	cluster: 	0.0013323207473168264
+	separation:	0.0015186618322252277
+	avg separation:	0.936456946618927
+	accu: 		99.99838969404186%
+	f1: 		99.99839067459106%
+	l1: 		473.9132385253906
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6376430988311768
+	cross ent: 	0.559285917534278
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.112828438949%
+	f1: 		91.11283421516418%
+	l1: 		473.9132385253906
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	8
+	train
+	time: 	260.7204146385193
+	cross ent: 	0.0004233425620051818
+	cluster: 	0.001332445101556413
+	separation:	0.0015186404616554573
+	avg separation:	0.9364512997600852
+	accu: 		99.99919484702093%
+	f1: 		99.99919533729553%
+	l1: 		448.47412109375
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6430165767669678
+	cross ent: 	0.56618809986573
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.03554868624421%
+	f1: 		91.03555083274841%
+	l1: 		448.47412109375
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	9
+	train
+	time: 	261.44980788230896
+	cross ent: 	0.0004068709934203473
+	cluster: 	0.0013323714105077736
+	separation:	0.0015187011955213581
+	avg separation:	0.9364522783816129
+	accu: 		99.99919484702093%
+	f1: 		99.99919533729553%
+	l1: 		430.1548156738281
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6453728675842285
+	cross ent: 	0.566883891247786
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.112828438949%
+	f1: 		91.11283421516418%
+	l1: 		430.1548156738281
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	10
+	train
+	time: 	260.4946036338806
+	cross ent: 	0.0003951640082280445
+	cluster: 	0.0013322801571996033
+	separation:	0.0015186275032733334
+	avg separation:	0.9364581986235099
+	accu: 		99.99838969404186%
+	f1: 		99.99839067459106%
+	l1: 		418.44097900390625
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.64595103263855
+	cross ent: 	0.5750035580534202
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		90.95826893353942%
+	f1: 		90.95826745033264%
+	l1: 		418.44097900390625
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	11
+	train
+	time: 	260.70376086235046
+	cross ent: 	0.0004091841558067282
+	cluster: 	0.0013322885686376342
+	separation:	0.0015185591564600698
+	avg separation:	0.9364498874408848
+	accu: 		99.99677938808374%
+	f1: 		99.99678134918213%
+	l1: 		411.79412841796875
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6533803939819336
+	cross ent: 	0.580301926113092
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		90.88098918083463%
+	f1: 		90.88099002838135%
+	l1: 		411.79412841796875
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	12
+	train
+	time: 	260.8127899169922
+	cross ent: 	0.0003919381026719549
+	cluster: 	0.0013323228972896824
+	separation:	0.0015186572873050973
+	avg separation:	0.9364510030417924
+	accu: 		99.99838969404186%
+	f1: 		99.99839067459106%
+	l1: 		407.4124755859375
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6333560943603516
+	cross ent: 	0.5836362838745117
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.03554868624421%
+	f1: 		91.03555083274841%
+	l1: 		407.4124755859375
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	13
+	train
+	time: 	260.4497175216675
+	cross ent: 	0.00039623994725129184
+	cluster: 	0.0013325447661901722
+	separation:	0.0015186565491584947
+	avg separation:	0.9364465481607053
+	accu: 		99.99919484702093%
+	f1: 		99.99919533729553%
+	l1: 		403.930908203125
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6354000568389893
+	cross ent: 	0.5927899938363296
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.19010819165379%
+	f1: 		91.190105676651%
+	l1: 		403.930908203125
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	14
+	train
+	time: 	260.5260512828827
+	cross ent: 	0.0003837162175744883
+	cluster: 	0.0013323510221969661
+	separation:	0.0015187518563510157
+	avg separation:	0.9364573268911874
+	accu: 		99.99838969404186%
+	f1: 		99.99839067459106%
+	l1: 		402.4474792480469
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6420979499816895
+	cross ent: 	0.5935298078335248
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.112828438949%
+	f1: 		91.11283421516418%
+	l1: 		402.4474792480469
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	15
+	train
+	time: 	260.6828279495239
+	cross ent: 	0.00037531577035267226
+	cluster: 	0.0013323677253219163
+	separation:	0.001518797484335669
+	avg separation:	0.9364474474117208
+	accu: 		99.99838969404186%
+	f1: 		99.99839067459106%
+	l1: 		402.13525390625
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.623239517211914
+	cross ent: 	0.5938851231565843
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.112828438949%
+	f1: 		91.11283421516418%
+	l1: 		402.13525390625
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	16
+	train
+	time: 	260.5453317165375
+	cross ent: 	0.0003537582226735739
+	cluster: 	0.001332470277025672
+	separation:	0.0015186544004599854
+	avg separation:	0.9364543899903356
+	accu: 		99.99919484702093%
+	f1: 		99.99919533729553%
+	l1: 		401.9878845214844
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.655160903930664
+	cross ent: 	0.5967222492282207
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		90.88098918083463%
+	f1: 		90.88099002838135%
+	l1: 		401.9878845214844
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	17
+	train
+	time: 	260.4362096786499
+	cross ent: 	0.0003341374354306298
+	cluster: 	0.0013324239767856382
+	separation:	0.0015187439353865524
+	avg separation:	0.9364488411548441
+	accu: 		100.0%
+	f1: 		100.0%
+	l1: 		402.7790832519531
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6426920890808105
+	cross ent: 	0.5972881586505816
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		90.95826893353942%
+	f1: 		90.95826745033264%
+	l1: 		402.7790832519531
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	18
+	train
+	time: 	261.0283308029175
+	cross ent: 	0.0003202178613555319
+	cluster: 	0.0013322757344668358
+	separation:	0.0015187623594417996
+	avg separation:	0.9364535783616021
+	accu: 		99.99919484702093%
+	f1: 		99.99919533729553%
+	l1: 		403.4794921875
+	p dist pair: 	2.170584201812744
+	test
+	time: 	3.6378984451293945
+	cross ent: 	0.5992598934815481
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		90.88098918083463%
+	f1: 		90.88099002838135%
+	l1: 		403.4794921875
+	p dist pair: 	2.170584201812744
+	above 10.00%
+iteration: 	19
+	train
+	time: 	260.5969488620758
+	cross ent: 	0.00030089308000240113
+	cluster: 	0.0013323377570720882
+	separation:	0.0015186486291685318
+	avg separation:	0.936448677616279
+	accu: 		99.99919484702093%
+	f1: 		99.99919533729553%
+	l1: 		404.2684020996094
+	p dist pair: 	2.170584201812744
+	test
+main.py:222: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  metrics_df = metrics_df.append({'ep':epoch, **train_metrics, **test_metrics}, ignore_index=True)
+	time: 	3.6393344402313232
+	cross ent: 	0.599188106564375
+	cluster: 	0.0026198986720723603
+	separation:	0.001536237725164168
+	avg separation:	0.936814193542187
+	accu: 		91.112828438949%
+	f1: 		91.11283421516418%
+	l1: 		404.2684020996094
+	p dist pair: 	2.170584201812744
+	above 10.00%
+Time elapsed: 25390.255482673645 seconds

@@ -5,12 +5,29 @@ from torchmetrics.functional import f1_score, recall, precision
 from helpers import list_of_distances, make_one_hot
 
 try:
-    from phylogeny_fish import species_to_ances_level0, species_to_ances_level1, species_to_ances_level2
+    from settings import phylo_level as PHYLO_LEVEL
 except:
-    print('Phylogeny_fish.py NOT FOUND')
-    species_to_ances_level0 = species_to_ances_level1 = species_to_ances_level2 = None
+    PHYLO_LEVEL = None
 
-PHYLO_LEVEL = None
+try:
+    from settings import dataset
+except:
+    dataset = 'fish'
+
+if dataset == 'fish':
+    try:
+        from phylogeny_fish import species_to_ances_level0, species_to_ances_level1, species_to_ances_level2
+    except:
+        print('Phylogeny_fish.py NOT FOUND')
+        species_to_ances_level0 = species_to_ances_level1 = species_to_ances_level2 = None
+elif dataset == 'cub':
+    try:
+        from phylogeny_cub import species_to_ances_level0, species_to_ances_level1, species_to_ances_level2
+    except:
+        print('phylogeny_cub.py NOT FOUND')
+        species_to_ances_level0 = species_to_ances_level1 = species_to_ances_level2 = None
+
+# PHYLO_LEVEL = None
 
 def print_phylo_level():
     print('Training model with phylo level as ', PHYLO_LEVEL)

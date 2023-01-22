@@ -15,12 +15,11 @@ level1_mapping = [['Alosa chrysochloris'], # 6
                     ['Lepisosteus osseus', 'Lepisosteus platostomus'],
                     ['Noturus exilis', 'Noturus flavus', 'Noturus gyrinus', 'Noturus miurus', 'Noturus nocturnus']]
 
-level0_mapping = [['Alosa chrysochloris'], # 4
-                    ['Carassius auratus', 'Cyprinus carpio', 'Notropis atherinoides', 'Notropis blennius', 'Notropis boops', 'Notropis buccatus', 'Notropis buchanani', 'Notropis dorsalis', 'Notropis hudsonius', 'Notropis leuciodus', 'Notropis nubilus', 'Notropis percobromus', 'Notropis stramineus', 'Notropis telescopus', 'Notropis texanus', 'Notropis volucellus', 'Notropis wickliffi', 'Noturus exilis', 'Noturus flavus', 'Noturus gyrinus', 'Noturus miurus', 'Noturus nocturnus', 'Phenacobius mirabilis'],
+level0_mapping = [['Alosa chrysochloris', 'Carassius auratus', 'Cyprinus carpio', 'Notropis atherinoides', 'Notropis blennius', 'Notropis boops', 'Notropis buccatus', 'Notropis buchanani', 'Notropis dorsalis', 'Notropis hudsonius', 'Notropis leuciodus', 'Notropis nubilus', 'Notropis percobromus', 'Notropis stramineus', 'Notropis telescopus', 'Notropis texanus', 'Notropis volucellus', 'Notropis wickliffi', 'Noturus exilis', 'Noturus flavus', 'Noturus gyrinus', 'Noturus miurus', 'Noturus nocturnus', 'Phenacobius mirabilis'],
                     ['Esox americanus', 'Gambusia affinis', 'Lepomis auritus', 'Lepomis cyanellus', 'Lepomis gibbosus', 'Lepomis gulosus', 'Lepomis humilis', 'Lepomis macrochirus', 'Lepomis megalotis', 'Lepomis microlophus', 'Morone chrysops', 'Morone mississippiensis'],
-                    ['Lepisosteus osseus', 'Lepisosteus platostomus']]
+                    ['Lepisosteus osseus', 'Lepisosteus platostomus']] # 3
 
-all_species = [x for y in level0_mapping for x in y]
+all_species = sorted([x for y in level0_mapping for x in y])
 species_to_idx = {all_species[i]:i for i in range(len(all_species))}
 
 species_to_ances_level0 = {}

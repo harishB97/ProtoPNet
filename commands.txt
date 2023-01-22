@@ -1,1 +1,49 @@
 python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/032-fish-spc-256-vgg19-10ppc-30ep/ -model 10_15push0.9096.pth -imgdir /home/harishbabu/data/Fish/phylo-VQVAE/train_global_mean_padded_256/Alosa chrysochloris/ -img INHS_FISH_38490.JPG -imgclass 0
+
+# spc model with a spc img
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/032-fish-spc-256-vgg19-10ppc-30ep/ -model 10_15push0.9096.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0
+
+# lvl2 model with lv2 img
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/037-fish-pad1-lvl2-256-vgg19-10ppc-30ep/ -model 10_18push0.9722.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-2/Carassius auratus" -img 6.png -imgclass 1
+
+# spc model with lv2 img
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/032-fish-spc-256-vgg19-10ppc-30ep/ -model 10_15push0.9096.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-2/Carassius auratus" -img 6.png -imgclass 1
+
+# spc model with a spc img
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/032-fish-spc-256-vgg19-10ppc-30ep/ -model 10_15push0.9096.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0
+
+# spc model with lv1 img
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/032-fish-spc-256-vgg19-10ppc-30ep/ -model 10_15push0.9096.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-1/Carassius auratus" -img 0.png -imgclass 17
+
+# spc model with lv1 img - id: 1
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/032-fish-spc-256-vgg19-10ppc-30ep/ -model 10_15push0.9096.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-1/Carassius auratus" -img 0.png -imgclass 1 -modellevel 3 -imglevel 1
+
+# spc model with lv1 img - id: 5
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/032-fish-spc-256-vgg19-10ppc-30ep/ -model 10_15push0.9096.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-1/Noturus exilis" -img 2.png -imgclass 5 -modellevel 3 -imglevel 1
+
+# lvl1 model with lv1 img - id: 5
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/044-fish-pad1-lvl1-256-vgg19-10ppc-20ep/ -model 10_10push0.9992.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-1/Noturus exilis" -img 2.png -imgclass 5 -modellevel 1 -imglevel 1
+
+# lvl1 model with lv1 img - id: 1
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/044-fish-pad1-lvl1-256-vgg19-10ppc-20ep/ -model 10_10push0.9992.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-1/Carassius auratus" -img 0.png -imgclass 1 -modellevel 1 -imglevel 1
+
+# lvl2 model with lv2 img - id: 7
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/043-fish-pad1-lvl2-256-vgg19-10ppc-20ep/ -model 10_19push0.9977.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-2/Notropis atherinoides" -img 0.png -imgclass 7 -modellevel 2 -imglevel 2
+
+# spc model with lv2 img - id: 5
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/032-fish-spc-256-vgg19-10ppc-30ep/ -model 10_15push0.9096.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-2/Notropis atherinoides" -img 0.png -imgclass 7 -modellevel 3 -imglevel 1
+
+# lvl2 model (25 protos) with lv2 img - id: 7
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/046-fish-pad1-lvl2-256-vgg19-25ppc-20ep/ -model 10_5push0.9977.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-2/Notropis atherinoides" -img 0.png -imgclass 7 -modellevel 2 -imglevel 2
+
+# lvl2 model (25 protos) with lv2 img - id: 5
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/046-fish-pad1-lvl2-256-vgg19-25ppc-20ep/ -model 10_5push0.9977.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-2/Lepomis auritus" -img 3.png -imgclass 5 -modellevel 2 -imglevel 2
+
+# spc model with lv2 img - id: 7
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/032-fish-spc-256-vgg19-10ppc-30ep/ -model 10_15push0.9096.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-2/Notropis atherinoides" -img 0.png -imgclass 7 -modellevel 3 -imglevel 2
+
+# spc model with lv2 img - id: 5
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/032-fish-spc-256-vgg19-10ppc-30ep/ -model 10_15push0.9096.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-2/Lepomis auritus" -img 3.png -imgclass 5 -modellevel 3 -imglevel 2
+
+# spc model (newly trained) with lv2 img - id: 5
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/045-fish-pad1-spc-256-vgg19-10ppc-20ep/ -model 10_17push0.9042.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-2/Lepomis auritus" -img 3.png -imgclass 5 -modellevel 3 -imglevel 2

@@ -9,12 +9,29 @@ import time
 from receptive_field import compute_rf_prototype
 from helpers import makedir, find_high_activation_crop
 
-from train_and_test import PHYLO_LEVEL
+# from train_and_test import PHYLO_LEVEL
 try:
-    from phylogeny_fish import species_to_ances_level0, species_to_ances_level1, species_to_ances_level2
+    from settings import phylo_level as PHYLO_LEVEL
 except:
-    print('Phylogeny_fish.py NOT FOUND')
-    species_to_ances_level0 = species_to_ances_level1 = species_to_ances_level2 = None
+    PHYLO_LEVEL = None
+
+try:
+    from settings import dataset
+except:
+    dataset = 'fish'
+
+if dataset == 'fish':
+    try:
+        from phylogeny_fish import species_to_ances_level0, species_to_ances_level1, species_to_ances_level2
+    except:
+        print('Phylogeny_fish.py NOT FOUND')
+        species_to_ances_level0 = species_to_ances_level1 = species_to_ances_level2 = None
+elif dataset == 'cub':
+    try:
+        from phylogeny_cub import species_to_ances_level0, species_to_ances_level1, species_to_ances_level2
+    except:
+        print('phylogeny_cub.py NOT FOUND')
+        species_to_ances_level0 = species_to_ances_level1 = species_to_ances_level2 = None
 
 # push each prototype to the nearest patch in the training set
 def push_prototypes(dataloader, # pytorch dataloader (must be unnormalized in [0,1])
@@ -56,9 +73,9 @@ def push_prototypes(dataloader, # pytorch dataloader (must be unnormalized in [0
     5: (optional) class identity
     '''
     if save_prototype_class_identity:
-        proto_rf_boxes = np.full(shape=[n_prototypes, 6],
+        proto_rf_boxes = np.full(shape=[n_prototypes, 7],
                                     fill_value=-1)
-        proto_bound_boxes = np.full(shape=[n_prototypes, 6],
+        proto_bound_boxes = np.full(shape=[n_prototypes, 7],
                                             fill_value=-1)
     else:
         proto_rf_boxes = np.full(shape=[n_prototypes, 5],
@@ -87,6 +104,8 @@ def push_prototypes(dataloader, # pytorch dataloader (must be unnormalized in [0
         '''
         start_index_of_search_batch = push_iter * search_batch_size
 
+        orig_class_id = search_y
+
         if PHYLO_LEVEL is not None:
             label = search_y
             label_list = label.numpy().tolist()
@@ -107,6 +126,7 @@ def push_prototypes(dataloader, # pytorch dataloader (must be unnormalized in [0
                                    proto_bound_boxes,
                                    class_specific=class_specific,
                                    search_y=search_y,
+                                   orig_class_id=orig_class_id,
                                    num_classes=num_classes,
                                    preprocess_input_function=preprocess_input_function,
                                    prototype_layer_stride=prototype_layer_stride,
@@ -139,6 +159,7 @@ def update_prototypes_on_batch(search_batch_input,
                                proto_bound_boxes, # this will be updated
                                class_specific=True,
                                search_y=None, # required if class_specific == True
+                               orig_class_id=None, # required if class_specific == True
                                num_classes=None, # required if class_specific == True
                                preprocess_input_function=None,
                                prototype_layer_stride=1,
@@ -248,8 +269,9 @@ def update_prototypes_on_batch(search_batch_input,
             proto_rf_boxes[j, 2] = rf_prototype_j[2]
             proto_rf_boxes[j, 3] = rf_prototype_j[3]
             proto_rf_boxes[j, 4] = rf_prototype_j[4]
-            if proto_rf_boxes.shape[1] == 6 and search_y is not None:
+            if proto_rf_boxes.shape[1] >= 6 and search_y is not None:
                 proto_rf_boxes[j, 5] = search_y[rf_prototype_j[0]].item()
+                proto_rf_boxes[j, 6] = orig_class_id[rf_prototype_j[0]].item()
 
             # find the highly activated region of the original image
             proto_dist_img_j = proto_dist_[img_index_in_batch, j, :, :]
@@ -272,8 +294,9 @@ def update_prototypes_on_batch(search_batch_input,
             proto_bound_boxes[j, 2] = proto_bound_j[1]
             proto_bound_boxes[j, 3] = proto_bound_j[2]
             proto_bound_boxes[j, 4] = proto_bound_j[3]
-            if proto_bound_boxes.shape[1] == 6 and search_y is not None:
+            if proto_bound_boxes.shape[1] >= 6 and search_y is not None:
                 proto_bound_boxes[j, 5] = search_y[rf_prototype_j[0]].item()
+                proto_bound_boxes[j, 6] = orig_class_id[rf_prototype_j[0]].item()
 
             if dir_for_saving_prototypes is not None:
                 if prototype_self_act_filename_prefix is not None:

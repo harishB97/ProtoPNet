@@ -5,9 +5,11 @@ import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 from torch.autograd import Variable
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import cv2
 from PIL import Image
+# import torchvision.utils as vutils
 
 import re
 
@@ -39,9 +41,35 @@ parser.add_argument('-model', nargs=1, type=str)
 parser.add_argument('-imgdir', nargs=1, type=str)
 parser.add_argument('-img', nargs=1, type=str)
 parser.add_argument('-imgclass', nargs=1, type=int, default=-1)
+parser.add_argument('-imglevel', nargs=1, type=int, default=3)
+parser.add_argument('-modellevel', nargs=1, type=int, default=3)
 args = parser.parse_args()
 
 os.environ['CUDA_VISIBLE_DEVICES'] = args.gpuid[0]
+
+# using species level model on ancestor level images
+model_level = args.modellevel[0]
+img_level = args.imglevel[0]
+
+import phylogeny_fish as phylo
+from collections import defaultdict
+
+descendants = None
+if (model_level == 3) and (img_level == 0):
+    descendants = defaultdict(list)
+    for key, val in phylo.species_to_ances_level0.items():
+        descendants[val].append(key)
+elif (model_level == 3) and (img_level == 1):
+    descendants = defaultdict(list)
+    for key, val in phylo.species_to_ances_level1.items():
+        descendants[val].append(key)
+elif (model_level == 3) and (img_level == 2):
+    descendants = defaultdict(list)
+    for key, val in phylo.species_to_ances_level2.items():
+        descendants[val].append(key)
+elif (model_level != img_level):
+    raise Exception("Invalid combination of modellevel and imglevel")
+
 
 # specify the test image to be analyzed
 test_image_dir = args.imgdir[0] #'./local_analysis/Painted_Bunting_Class15_0081/'
@@ -70,7 +98,7 @@ experiment_run = '/'.join(load_model_dir.split('/')[3:])
 #                                   experiment_run, load_model_name)
 
 save_analysis_path = os.path.join(load_model_dir, 'local_analysis', load_model_name,
-                                  test_image_name.split('.')[0])
+                                  *test_image_dir.split('/')[-3:], test_image_name.split('.')[0])
 
 makedir(save_analysis_path)
 
@@ -122,7 +150,10 @@ if check_test_accu:
 load_img_dir = os.path.join(load_model_dir, 'img')
 
 prototype_info = np.load(os.path.join(load_img_dir, 'epoch-'+epoch_number_str, 'bb'+epoch_number_str+'.npy'))
-prototype_img_identity = prototype_info[:, -1]
+prototype_img_identity = prototype_info[:, 5]
+prototype_base_img_identity = None
+if prototype_info.shape[1] > 6:
+    prototype_base_img_identity = prototype_info[:, 6]
 
 log('Prototypes are chosen from ' + str(len(set(prototype_img_identity))) + ' number of classes.')
 log('Their class identities are: ' + str(prototype_img_identity))
@@ -153,6 +184,7 @@ def save_prototype(fname, epoch, index):
     p_img = plt.imread(file)
     #plt.axis('off')
     plt.imsave(fname, p_img)
+    return p_img
     
 def save_prototype_self_activation(fname, epoch, index):
     import glob
@@ -161,6 +193,7 @@ def save_prototype_self_activation(fname, epoch, index):
     p_img = plt.imread(file)
     #plt.axis('off')
     plt.imsave(fname, p_img)
+    return p_img
 
 def save_prototype_original_img_with_bbox(fname, epoch, index,
                                           bbox_height_start, bbox_height_end,
@@ -177,6 +210,7 @@ def save_prototype_original_img_with_bbox(fname, epoch, index,
     #plt.imshow(p_img_rgb)
     #plt.axis('off')
     plt.imsave(fname, p_img_rgb)
+    return p_img_rgb
 
 def imsave_with_bbox(fname, img_rgb, bbox_height_start, bbox_height_end,
                      bbox_width_start, bbox_width_end, color=(0, 255, 255)):
@@ -188,6 +222,7 @@ def imsave_with_bbox(fname, img_rgb, bbox_height_start, bbox_height_end,
     #plt.imshow(img_rgb_float)
     #plt.axis('off')
     plt.imsave(fname, img_rgb_float)
+    return img_rgb_float
 
 # load the test image and forward it through the network
 preprocess = transforms.Compose([
@@ -228,13 +263,16 @@ original_img = save_preprocessed_img(os.path.join(save_analysis_path, 'original_
 makedir(os.path.join(save_analysis_path, 'most_activated_prototypes'))
 
 log('Most activated 10 prototypes of this image:')
+most_activated_df = pd.DataFrame()
+top_k_imgs = []
 array_act, sorted_indices_act = torch.sort(prototype_activations[idx])
-for i in range(1,11):
+for i in range(1,21):
     log('top {0} activated prototype for this image:'.format(i))
+    most_activated_dict = {}
     save_prototype(os.path.join(save_analysis_path, 'most_activated_prototypes',
                                 'top-%d_activated_prototype.png' % i),
                    start_epoch_number, sorted_indices_act[-i].item())
-    save_prototype_original_img_with_bbox(fname=os.path.join(save_analysis_path, 'most_activated_prototypes',
+    orig_bb = save_prototype_original_img_with_bbox(fname=os.path.join(save_analysis_path, 'most_activated_prototypes',
                                                              'top-%d_activated_prototype_in_original_pimg.png' % i),
                                           epoch=start_epoch_number,
                                           index=sorted_indices_act[-i].item(),
@@ -243,15 +281,23 @@ for i in range(1,11):
                                           bbox_width_start=prototype_info[sorted_indices_act[-i].item()][3],
                                           bbox_width_end=prototype_info[sorted_indices_act[-i].item()][4],
                                           color=(0, 255, 255))
-    save_prototype_self_activation(os.path.join(save_analysis_path, 'most_activated_prototypes',
+    orig_self_act = save_prototype_self_activation(os.path.join(save_analysis_path, 'most_activated_prototypes',
                                                 'top-%d_activated_prototype_self_act.png' % i),
-                                   start_epoch_number, sorted_indices_act[-i].item())
+                                   start_epoch_number, sorted_indices_act[-i].item())[...,:-1]
     log('prototype index: {0}'.format(sorted_indices_act[-i].item()))
     log('prototype class identity: {0}'.format(prototype_img_identity[sorted_indices_act[-i].item()]))
     if prototype_max_connection[sorted_indices_act[-i].item()] != prototype_img_identity[sorted_indices_act[-i].item()]:
         log('prototype connection identity: {0}'.format(prototype_max_connection[sorted_indices_act[-i].item()]))
     log('activation value (similarity score): {0}'.format(array_act[-i]))
     log('last layer connection with predicted class: {0}'.format(ppnet.last_layer.weight[predicted_cls][sorted_indices_act[-i].item()]))
+
+    most_activated_df = most_activated_df.append({'prototype index':sorted_indices_act[-i].item(),
+                                                    'prototype class identity': prototype_img_identity[sorted_indices_act[-i].item()],
+                                                    'similarity score': array_act[-i].cpu().item()}, ignore_index=True)
+    try:
+        most_activated_df.to_csv(os.path.join(save_analysis_path, 'most_activated_prototypes', 'most_activated.csv'))
+    except:
+        print('Unable to save most_activated.csv')
     
     activation_pattern = prototype_activation_patterns[idx][sorted_indices_act[-i].item()].detach().cpu().numpy()
     upsampled_activation_pattern = cv2.resize(activation_pattern, dsize=(img_size, img_size),
@@ -267,7 +313,7 @@ for i in range(1,11):
                             'most_highly_activated_patch_by_top-%d_prototype.png' % i),
                high_act_patch)
     log('most highly activated patch by this prototype shown in the original image:')
-    imsave_with_bbox(fname=os.path.join(save_analysis_path, 'most_activated_prototypes',
+    img_bb = imsave_with_bbox(fname=os.path.join(save_analysis_path, 'most_activated_prototypes',
                             'most_highly_activated_patch_in_original_img_by_top-%d_prototype.png' % i),
                      img_rgb=original_img,
                      bbox_height_start=high_act_patch_indices[0],
@@ -284,14 +330,68 @@ for i in range(1,11):
     overlayed_img = 0.5 * original_img + 0.3 * heatmap
     log('prototype activation map of the chosen image:')
     #plt.axis('off')
+    img_act = overlayed_img
     plt.imsave(os.path.join(save_analysis_path, 'most_activated_prototypes',
                             'prototype_activation_map_by_top-%d_prototype.png' % i),
                overlayed_img)
     log('--------------------------------------------------------------')
 
+    # row = torch.stack([torch.tensor(img_bb), torch.tensor(orig_bb), torch.tensor(img_act), torch.tensor(orig_self_act[...,:-1])])
+    # breakpoint()
+    # vutils.save_image(row, 
+    #                     os.path.join(save_analysis_path, 'most_activated_prototypes', 
+    #                             'top-%d_prototype.png' % i), 
+    #                     padding=4)
+    img_bb = cv2.copyMakeBorder(img_bb, 5, 5, 5, 5, cv2.BORDER_CONSTANT)
+    orig_bb = cv2.copyMakeBorder(orig_bb, 5, 5, 5, 5, cv2.BORDER_CONSTANT)
+    img_act = cv2.copyMakeBorder(img_act, 5, 5, 5, 5, cv2.BORDER_CONSTANT)
+    orig_self_act = cv2.copyMakeBorder(orig_self_act, 5, 5, 5, 5, cv2.BORDER_CONSTANT)
+    row = np.hstack([img_bb, orig_bb, img_act, orig_self_act])
+    row = cv2.cvtColor(row*255, cv2.COLOR_RGB2BGR)
+    proto_class_id = prototype_img_identity[sorted_indices_act[-i].item()]
+    proto_base_class_id = None
+    if prototype_base_img_identity is not None:
+        proto_base_class_id = prototype_base_img_identity[sorted_indices_act[-i].item()]
+    if descendants:
+        if (proto_class_id in descendants[test_image_label]):
+            text_color = (4, 143, 14)
+        else:
+            text_color = (0, 0, 255)
+    elif proto_class_id == test_image_label:
+        text_color = (4, 143, 14)
+    else:
+        text_color = (0, 0, 255)
+
+    # text = " ".join(['PROTO CLASS:', str(proto_class_id),
+    #                 'SCORE:', str(round(array_act[-i].item(), 2))])
+    text = 'PROTO CLASS: ' + str(proto_class_id)
+    if proto_base_class_id:
+        text += " | " + 'PROTO SPECIES CLASS: ' + str(proto_base_class_id)
+    text += " | " + 'SCORE: ' + str(round(array_act[-i].item(), 2))
+    row = cv2.putText(row, text, org=(10, 30), fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                        fontScale=0.75, color=text_color, thickness=2, lineType=cv2.LINE_AA)
+    cv2.imwrite(os.path.join(save_analysis_path, 'most_activated_prototypes', 
+                                'comparison_top-%d_prototype.png' % i),
+               row)
+    top_k_imgs.append(row)
+
+    breakpoint()
+
+
+# vutils.save_image(torch.vstack(top_k_imgs), 
+#                         os.path.join(save_analysis_path, 'most_activated_prototypes', 
+#                                 'consolidated_top-10_prototypes.png' % i), 
+#                         padding=4)
+# top_k_imgs = cv2.cvtColor(np.vstack(top_k_imgs), cv2.COLOR_RGB2BGR)
+cv2.imwrite(os.path.join(save_analysis_path, 'most_activated_prototypes', 
+                                'comparison_consolidated_top-10_prototypes.png'),
+               np.vstack(top_k_imgs))
+
+
 ##### PROTOTYPES FROM TOP-k CLASSES
-k = 38
+k = 5
 log('Prototypes from top-%d classes:' % k)
+prototype_top_k_classes_df = pd.DataFrame()
 topk_logits, topk_classes = torch.topk(logits[idx], k=k)
 for i,c in enumerate(topk_classes.detach().cpu().numpy()):
     makedir(os.path.join(save_analysis_path, 'top-%d_class_prototypes' % (i+1)))
@@ -326,6 +426,15 @@ for i,c in enumerate(topk_classes.detach().cpu().numpy()):
             log('prototype connection identity: {0}'.format(prototype_max_connection[prototype_index]))
         log('activation value (similarity score): {0}'.format(prototype_activations[idx][prototype_index]))
         log('last layer connection: {0}'.format(ppnet.last_layer.weight[c][prototype_index]))
+
+        prototype_top_k_classes_df = prototype_top_k_classes_df.append({'prototype index':prototype_index,
+                                                    'prototype class identity': prototype_img_identity[prototype_index],
+                                                    'similarity score': prototype_activations[idx][prototype_index].cpu().item()},
+                                                     ignore_index=True)
+        try:
+            prototype_top_k_classes_df.to_csv(os.path.join(save_analysis_path, 'most_activated_prototypes', 'prototype_top_k_classes.csv'))
+        except:
+            print('Unable to save most_activated.csv')
         
         activation_pattern = prototype_activation_patterns[idx][prototype_index].detach().cpu().numpy()
         upsampled_activation_pattern = cv2.resize(activation_pattern, dsize=(img_size, img_size),
