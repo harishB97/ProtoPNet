@@ -1,7 +1,9 @@
 import torch
 
-mean = (0.485, 0.456, 0.406)
-std = (0.229, 0.224, 0.225)
+# mean = (0.485, 0.456, 0.406)
+# std = (0.229, 0.224, 0.225)
+
+from settings import mean, std
 
 def preprocess(x, mean, std):
     assert x.size(1) == 3

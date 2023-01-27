@@ -218,7 +218,7 @@ def find_k_nearest_patches_to_prototypes(dataloader, # pytorch dataloader (must 
                                vmax=1.0)
                     
                 # save the highly activated patch    
-                high_act_patch_indices = find_high_activation_crop(upsampled_act_pattern)
+                high_act_patch_indices, _ = find_high_activation_crop(upsampled_act_pattern)
                 high_act_patch = patch.original_img[high_act_patch_indices[0]:high_act_patch_indices[1],
                                                     high_act_patch_indices[2]:high_act_patch_indices[3], :]
                 np.save(os.path.join(dir_for_saving_images,

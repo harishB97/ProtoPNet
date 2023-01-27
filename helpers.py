@@ -42,4 +42,4 @@ def find_high_activation_crop(activation_map, percentile=95):
         if np.amax(mask[:,j]) > 0.5:
             upper_x = j
             break
-    return lower_y, upper_y+1, lower_x, upper_x+1
+    return (lower_y, upper_y+1, lower_x, upper_x+1), mask

@@ -283,7 +283,7 @@ def update_prototypes_on_batch(search_batch_input,
                 proto_act_img_j = prototype_activation_function_in_numpy(proto_dist_img_j)
             upsampled_act_img_j = cv2.resize(proto_act_img_j, dsize=(original_img_size, original_img_size),
                                              interpolation=cv2.INTER_CUBIC)
-            proto_bound_j = find_high_activation_crop(upsampled_act_img_j)
+            proto_bound_j, _ = find_high_activation_crop(upsampled_act_img_j)
             # crop out the image patch with high activation as prototype image
             proto_img_j = original_img_j[proto_bound_j[0]:proto_bound_j[1],
                                          proto_bound_j[2]:proto_bound_j[3], :]

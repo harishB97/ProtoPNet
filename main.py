@@ -49,6 +49,9 @@ shutil.copy(src=os.path.join(os.getcwd(), 'settings.py'), dst=model_dir)
 shutil.copy(src=os.path.join(os.getcwd(), base_architecture_type + '_features.py'), dst=model_dir)
 shutil.copy(src=os.path.join(os.getcwd(), 'model.py'), dst=model_dir)
 shutil.copy(src=os.path.join(os.getcwd(), 'train_and_test.py'), dst=model_dir)
+shutil.copy(src=os.path.join(os.getcwd(), 'phylogeny_fish.py'), dst=model_dir)
+shutil.copy(src=os.path.join(os.getcwd(), 'phylogeny_cub.py'), dst=model_dir)
+shutil.copy(src=os.path.join(os.getcwd(), 'preprocess.py'), dst=model_dir)
 
 log, logclose = create_logger(log_filename=os.path.join(model_dir, 'train.log'))
 img_dir = os.path.join(model_dir, 'img')
@@ -64,13 +67,14 @@ from settings import train_dir, test_dir, train_push_dir, \
 
 normalize = transforms.Normalize(mean=mean,
                                  std=std)
+print('mean', mean, 'std', std)
 
 # all datasets
 # train set
 train_dataset = datasets.ImageFolder(
     train_dir,
     transforms.Compose([
-        # transforms.Resize(size=(img_size, img_size)),
+        transforms.Resize(size=(img_size, img_size)),
         transforms.ToTensor(),
         normalize,
     ]))
@@ -81,7 +85,7 @@ train_loader = torch.utils.data.DataLoader(
 train_push_dataset = datasets.ImageFolder(
     train_push_dir,
     transforms.Compose([
-        # transforms.Resize(size=(img_size, img_size)),
+        transforms.Resize(size=(img_size, img_size)),
         transforms.ToTensor(),
     ]))
 train_push_loader = torch.utils.data.DataLoader(
@@ -91,13 +95,14 @@ train_push_loader = torch.utils.data.DataLoader(
 test_dataset = datasets.ImageFolder(
     test_dir,
     transforms.Compose([
-        # transforms.Resize(size=(img_size, img_size)),
+        transforms.Resize(size=(img_size, img_size)),
         transforms.ToTensor(),
         normalize,
     ]))
 test_loader = torch.utils.data.DataLoader(
     test_dataset, batch_size=test_batch_size, shuffle=False,
     num_workers=4, pin_memory=False)
+
 
 log('Running: '+experiment_run)
 
@@ -116,6 +121,14 @@ ppnet = model.construct_PPNet(base_architecture=base_architecture,
                               add_on_layers_type=add_on_layers_type)
 #if prototype_activation_function == 'linear':
 #    ppnet.set_last_layer_incorrect_connection(incorrect_strength=0)
+
+from settings import model_ckpt_path
+if model_ckpt_path is not None:
+    # checkpoint = torch.load(model_ckpt_path)
+    # ppnet.load_state_dict(checkpoint['model_state_dict'])
+    ppnet = torch.load(model_ckpt_path)
+    log('Restored model form ' + model_ckpt_path)
+
 ppnet = ppnet.cuda()
 ppnet_multi = torch.nn.DataParallel(ppnet)
 class_specific = True
@@ -146,6 +159,8 @@ from settings import coefs
 
 # number of training epochs, number of warm epochs, push start epoch, push epochs
 from settings import num_train_epochs, num_warm_epochs, push_start, push_epochs
+
+# breakpoint()
 
 # train the model
 log('start training')

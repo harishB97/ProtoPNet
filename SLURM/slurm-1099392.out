@@ -1,0 +1,17 @@
+start load env and run python
+Resetting modules to system default
+Resetting modules to system default
+/cm/local/apps/slurm/var/spool/job1099392/slurm_script: line 21: activate: No such file or directory
+/home/harishbabu/.conda/envs/taming3/bin/python
+0
+mean (0.7451, 0.7302, 0.6958) std (0.1604, 0.1922, 0.2335)
+Running: 057-fish-pad1-lvl2-256-vgg19-10ppc-20ep-crcted_mean_std
+training set size: 124200
+push set size: 4140
+test set size: 1294
+batch size: 80
+start training
+epoch: 	0
+	warm
+	train
+slurmstepd: error: *** JOB 1099392 ON tc-dgx005 CANCELLED AT 2023-01-27T10:10:59 ***
