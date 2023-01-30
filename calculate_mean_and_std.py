@@ -11,7 +11,8 @@ from settings import train_batch_size
 import time
 
 # train_dir = '/fastscratch/harishbabu/data/Fish/phylo-VQVAE/test_global_mean_padded_256'
-train_dir = '/fastscratch/harishbabu/data/CUB_bb_crop/train_bb_crop_augmented_256/'
+# train_dir = '/fastscratch/harishbabu/data/CUB_bb_crop/train_bb_crop_augmented_256/'
+train_dir = '/home/harishbabu/data/CUB_190_split/official/CUB_200_2011/train_segmented_imagenet_background_bb_crop_256_augmented'
 img_size = 256
 
 print(train_dir)
@@ -72,4 +73,12 @@ train_dir = '/fastscratch/harishbabu/data/Fish/phylo-VQVAE/test_global_mean_padd
 train_dir = '/fastscratch/harishbabu/data/CUB_bb_crop/train_bb_crop_augmented_256/'
     mean: [tensor(0.4671), tensor(0.4643), tensor(0.3998)]
     std: [tensor(0.2372), tensor(0.2332), tensor(0.2567)]
+
+train_dir = '/fastscratch/mridul/cub_190_split_resized/official/CUB_200_2011/train_segmented_imagenet_background_bb_crop_256'
+    mean: [tensor(0.4728), tensor(0.4410), tensor(0.3919)]
+    std: [tensor(0.1265), tensor(0.1201), tensor(0.1221)]
+
+train_dir = '/home/harishbabu/data/CUB_190_split/official/CUB_200_2011/train_segmented_imagenet_background_bb_crop_256_augmented'
+    mean: [tensor(0.4699), tensor(0.4381), tensor(0.3879)]
+    std: [tensor(0.1360), tensor(0.1292), tensor(0.1311)]
 """

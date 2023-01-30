@@ -2,8 +2,8 @@
 
 #SBATCH --account=mabrownlab
 #SBATCH --partition=dgx_normal_q
-#SBATCH --time=18:00:00 
-#SBATCH --gres=gpu:1
+#SBATCH --time=12:00:00 
+#SBATCH --gres=gpu:2
 #SBATCH --nodes=1 --ntasks-per-node=1 --cpus-per-task=8
 #SBATCH -o ./SLURM/slurm-%j.out
 
@@ -24,7 +24,7 @@ which python
 # python main.py --name Phylo-VQVAE --base configs/custom_vqgan-256emb-512img-phylo-vqvae-afterhyperp.yaml -t True --gpus 0, #1 # crashes... not enough memory?!
 # python main.py --name Phylo-VQVAE --base configs/custom_vqgan-256emb-512img-phylo-vqvae.yaml -t True --gpus 0, #1
 # python main.py --name Phylo-VQVAE --base configs/custom_vqgan-256emb-512img-phylo-vqvae-phyloloss.yaml -t True --gpus 0,
-python main.py
+python main.py -gpuid=0,1
 
 # python global_analysis.py -modeldir "/home/harishbabu/projects/ProtoPNet/saved_models/vgg19/002-fish-3ppc-20ep" -model "/home/harishbabu/projects/ProtoPNet/saved_models/vgg19/002-fish-3ppc-20ep/10nopush0.9127.pth"
 

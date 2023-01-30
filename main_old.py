@@ -174,8 +174,7 @@ from settings import coefs
 
 # number of training epochs, number of warm epochs, push start epoch, push epochs
 from settings import num_train_epochs, num_warm_epochs, push_start, push_epochs
-from settings import start_epoch
-print('start_epoch:', start_epoch)
+
 # breakpoint()
 
 # train the model
@@ -186,7 +185,7 @@ metrics_df = pd.DataFrame()
 results_dir = os.path.join(model_dir, 'results')
 makedir(results_dir)
 start = time.time()
-for epoch in range(start_epoch, num_train_epochs):
+for epoch in range(num_train_epochs):
     log('epoch: \t{0}'.format(epoch))
 
     if epoch < num_warm_epochs:

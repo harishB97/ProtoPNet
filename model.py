@@ -95,6 +95,14 @@ class PPNet(nn.Module):
                     add_on_layers.append(nn.Sigmoid())
                 current_in_channels = current_in_channels // 2
             self.add_on_layers = nn.Sequential(*add_on_layers)
+        elif add_on_layers_type == 'regular_with_batchnorm':
+            self.add_on_layers = nn.Sequential(
+                nn.Conv2d(in_channels=first_add_on_layer_in_channels, out_channels=self.prototype_shape[1], kernel_size=1),
+                nn.ReLU(),
+                nn.Conv2d(in_channels=self.prototype_shape[1], out_channels=self.prototype_shape[1], kernel_size=1),
+                nn.BatchNorm2d(self.prototype_shape[1]),
+                nn.Sigmoid()
+                )
         else:
             self.add_on_layers = nn.Sequential(
                 nn.Conv2d(in_channels=first_add_on_layer_in_channels, out_channels=self.prototype_shape[1], kernel_size=1),

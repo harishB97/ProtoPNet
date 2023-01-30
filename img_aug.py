@@ -9,10 +9,10 @@ def makedir(path):
     if not os.path.exists(path):
         os.makedirs(path)
 
-datasets_root_dir = '/home/harishbabu/data/CUB_190_split/official/CUB_200_2011/'
-dir = datasets_root_dir + 'train_bb_crop/'
-target_dir = datasets_root_dir + 'train_bb_crop_augmented/'
-
+datasets_root_dir = '/fastscratch/mridul/cub_190_split_resized/official/CUB_200_2011/'
+dir = datasets_root_dir + 'train_segmented_imagenet_background_bb_crop_256/'
+# target_dir = '/home/harishbabu/data/CUB_190_split/official/CUB_200_2011/' + 'train_segmented_imagenet_background_bb_crop_256_augmented/'
+target_dir = datasets_root_dir + 'train_segmented_imagenet_background_bb_crop_256_augmented/'  #ORIGINAL
 makedir(target_dir)
 folders = [os.path.join(dir, folder) for folder in next(os.walk(dir))[1]]
 target_folders = [os.path.join(target_dir, folder) for folder in next(os.walk(dir))[1]]
@@ -64,5 +64,3 @@ for i in range(len(folders)):
     #del p
 
 print((time.time() - start) / 60)
-
-breakpoint()

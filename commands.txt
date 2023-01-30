@@ -47,3 +47,60 @@ python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_mod
 
 # spc model (newly trained) with lv2 img - id: 5
 python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/045-fish-pad1-spc-256-vgg19-10ppc-20ep/ -model 10_17push0.9042.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-2/Lepomis auritus" -img 3.png -imgclass 5 -modellevel 3 -imglevel 2
+
+# lvl2 model (25 protos) with spc img - id: 0
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/046-fish-pad1-lvl2-256-vgg19-25ppc-20ep/ -model 10_5push0.9977.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 2 -imglevel 3
+
+# lvl1 model (25 protos) with spc img - id: 0
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/047-fish-pad1-lvl1-256-vgg19-25ppc-20ep/ -model 10_19push0.9985.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 1 -imglevel 3
+
+# lvl1 model (10 protos) with spc img - id: 0
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/044-fish-pad1-lvl1-256-vgg19-10ppc-20ep/ -model 10_19push0.9992.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 1 -imglevel 3
+
+# lvl2 model (10 protos - intentionally unsorted spc labels) with spc img - id: 0
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/048-fish-pad1-lvl2-256-vgg19-10ppc-10ep-testrun_unsorted_class_names/ -model 9nopush0.9320.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 2 -imglevel 3
+
+# lvl2 model 043 (10 protos) with spc img - id:0, for checking conv output one epoch after another
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/043-fish-pad1-lvl2-256-vgg19-10ppc-20ep/ -model 0nopush0.9691.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 2 -imglevel 3
+
+# spc model 045 (10 protos) with spc img - id:0, for checking conv output one epoch after another
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/045-fish-pad1-spc-256-vgg19-10ppc-20ep/ -model 0nopush0.4930.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 3 -imglevel 3
+
+# lvl1 model 044 (10 protos) with spc img - id:0, for checking conv output one epoch after another
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/044-fish-pad1-lvl1-256-vgg19-10ppc-20ep/ -model 0nopush0.9737.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 3 -imglevel 3
+
+# spc model fish-pad1-spc-256-vgg19-10ppc-1ep-checking_01_prob (10 protos) with spc img - id:0, for checking conv output one epoch after another
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/fish-pad1-spc-256-vgg19-10ppc-1ep-checking_01_prob/ -model 0nopush0.5155.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 3 -imglevel 3
+
+# lvl2 model fish-pad1-lvl2-256-vgg19-10ppc-1ep-checking_01_prob (10 protos) with spc img - id:0, for checking conv output one epoch after another
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/fish-pad1-lvl2-256-vgg19-10ppc-1ep-checking_01_prob/ -model 0nopush0.9760.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 2 -imglevel 3
+
+# lvl2 model jan09-039-fish-pad1-lvl2-256-vgg19-10ppc-01ep (10 protos) with spc img - id:0, for checking conv output one epoch after another
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet-Jan09/saved_models/vgg19/jan09-039-fish-pad1-lvl2-256-vgg19-10ppc-01ep/ -model 0nopush0.8130.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 2 -imglevel 3
+
+# spc model jan09-039-fish-pad1-lvl2-256-vgg19-10ppc-01ep (10 protos) with spc img - id:0, for checking conv output one epoch after another
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet-Jan09/saved_models/vgg19/jan09-039-fish-pad1-spc-256-vgg19-10ppc-01ep -model 0nopush0.8223.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 3 -imglevel 3
+
+# lvl2 model (037 old one) with spc img - id:0 (0nopush0.7743.pth -> 0th epoch)
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/037-fish-pad1-lvl2-256-vgg19-10ppc-30ep/ -model 0nopush0.7743.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 2 -imglevel 3
+
+# lvl2 model jan09-040 (initiated with 037 0th epcoh, 10 protos) with spc img - id:0, for checking conv output one epoch after another
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet-Jan09/saved_models/vgg19/jan09-040-fish-pad1-lvl2-256-vgg19-10ppc-01ep-init_with_037/ -model 0nopush0.8091.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 2 -imglevel 3
+
+# lvl2 model jan09-041 (initiated with 037 0th epcoh, 10 protos) with spc img - id:0, for checking conv output one epoch after another
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet-Jan09/saved_models/vgg19/jan09-041-fish-pad1-lvl2-256-vgg19-10ppc-11ep-init_with_037/ -model 0nopush0.8184.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 2 -imglevel 3
+
+# spc model (saturated one) with a spc img
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/032-fish-spc-256-vgg19-10ppc-30ep/ -model 20_4push0.9049.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/species/Alosa chrysochloris" -img 0.png -imgclass 0 -modellevel 3 -imglevel 3
+
+# lvl2 model vgg19_bn (055) with a generated lvl2 notropis img. img id: 7
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19_bn/055-fish-pad1-lvl2-256-vgg19_bn-10ppc-20ep/ -model 10_19push0.9985.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-2/Notropis atherinoides/" -img 4.png -imgclass 7 -modellevel 2 -imglevel 2
+
+# lvl2 model vgg19_bn with addn bn layer before sigmoid (063) with a generated lvl2 notropis img. img id: 7
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19_bn/063-fish-pad1-lvl2-256-vgg19_bn-10ppc-10ep-crcted_mean_std-bn_before_sigmoid/ -model 10_3push0.9892.pth -imgdir "/home/harishbabu/data/Fish/phylo-VQVAE/generated_dataset/group-level-2/Notropis atherinoides/" -img 4.png -imgclass 7 -modellevel 2 -imglevel 2
+
+# cub lvl1 model vgg19 with a spc image from test set Lazuli_Bunting_0042_14820 img id: 4, spc img id: 14
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/056-cub-bbcrop-lvl1-256-vgg19-10ppc-30ep/ -model 10_19push0.9051.pth -imgdir "/home/harishbabu/data/CUB_190_split/official/CUB_200_2011/test_bb_crop_256/015.Lazuli_Bunting/" -img Lazuli_Bunting_0042_14820.jpg -imgclass 4 -modellevel 1 -imglevel 3 -dataset 'cub'
+
+# cub lvl1 model vgg19 with a spc image from test set Lazuli_Bunting_0001_14916.jpg img id: 4, spc img id: 14
+python local_analysis.py -modeldir /home/harishbabu/projects/ProtoPNet/saved_models/vgg19/056-cub-bbcrop-lvl1-256-vgg19-10ppc-30ep/ -model 10_19push0.9051.pth -imgdir "/home/harishbabu/data/CUB_190_split/official/CUB_200_2011/test_bb_crop_256/015.Lazuli_Bunting/" -img Lazuli_Bunting_0001_14916.jpg -imgclass 4 -modellevel 1 -imglevel 3 -dataset 'cub'

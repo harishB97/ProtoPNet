@@ -114,7 +114,7 @@ check_test_accu = False
 
 # log, logclose = create_logger(log_filename=os.path.join(save_analysis_path, 'local_analysis.log'))
 
-load_model_path = r'/home/harishbabu/projects/ProtoPNet/saved_models/vgg11/027-fish-lvl1-256-vgg11-10ppc-30ep/9nopush0.9730.pth'
+load_model_path = r'/home/harishbabu/projects/ProtoPNet/saved_models/vgg11/041-fish-pad2-spc-256-vgg11-10ppc-20ep/19nopush0.9057.pth'
 # epoch_number_str = re.search(r'\d+', load_model_name).group(0)
 # start_epoch_number = int(epoch_number_str)
 
@@ -166,9 +166,9 @@ print()
 print('Count of saturated patches:', saturation_count, '/64')
 print()
 i, j = max_idx
-print('Patch with maximum saturated values', '(index {i}, {j})')
+print('Patch with maximum saturated values', '(index {', i, '}, {', j, '})')
 print(np.round(feature[:, i, j].detach().cpu().numpy(), 5))
 print()
 print('No of saturated values:', max_saturation, '/128')
 
-breakpoint()
+# breakpoint()

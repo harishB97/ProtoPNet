@@ -1,37 +1,49 @@
-experiment_run = '059-cub-bbcrop-lvl0-256-vgg19-10ppc-20ep-crcted_mean_std'
-# experiment_run = '058-fish-pad1-lvl2-256-vgg19_bn-25ppc-20ep-crcted_mean_std'
+# experiment_run = '064-cub-bbcrop-seg-lvl1-256-vgg19-10ppc-11ep-crcted_mean_std'
+experiment_run = '067-fish-pad1-spc-256-vgg19_bn-10ppc-11ep-crcted_mean_std-bn_before_sigmoid'
 
-# model_ckpt_path = '/home/harishbabu/projects/ProtoPNet/saved_models/vgg19/037-fish-pad1-lvl2-256-vgg19-10ppc-30ep/0nopush0.7743.pth'
+start_epoch = 0 # 0-indexed
+# model_ckpt_path = '/home/harishbabu/projects/ProtoPNet/saved_models/vgg19_bn/063-fish-pad1-lvl2-256-vgg19_bn-10ppc-10ep-crcted_mean_std-bn_before_sigmoid/9nopush0.9985.pth'
 model_ckpt_path = None
 
-phylo_level = 0
+phylo_level = None
 
-dataset = 'cub'
-data_path = '/fastscratch/harishbabu/data/CUB_bb_crop/'
-train_dir = data_path + 'train_bb_crop_augmented_256/'
-test_dir = data_path + 'test_bb_crop_256/'
-train_push_dir = data_path + 'train_bb_crop_256/'
-train_batch_size = 80
-test_batch_size = 100
-train_push_batch_size = 75
-mean = (0.4671, 0.4643, 0.3998)
-std = (0.2372, 0.2332, 0.2567) 
-
-# dataset = 'fish'
-# data_path = '/fastscratch/harishbabu/data/Fish/phylo-VQVAE/'
-# train_dir = data_path + 'train_global_mean_padded_256_augmented/'
-# test_dir = data_path + 'test_global_mean_padded_256/'
-# train_push_dir = data_path + 'train_global_mean_padded_256/'
+# dataset = 'cub' # WITHOUT SEGMENTATION
+# data_path = '/fastscratch/harishbabu/data/CUB_bb_crop/'
+# train_dir = data_path + 'train_bb_crop_augmented_256/'
+# test_dir = data_path + 'test_bb_crop_256/'
+# train_push_dir = data_path + 'train_bb_crop_256/'
 # train_batch_size = 80
 # test_batch_size = 100
 # train_push_batch_size = 75
-# mean = (0.7451, 0.7302, 0.6958)
-# std = (0.1604, 0.1922, 0.2335)
+# mean = (0.4671, 0.4643, 0.3998)
+# std = (0.2372, 0.2332, 0.2567) 
+
+# dataset = 'cub' # SEGMENTED DATASET
+# data_path = '/home/harishbabu/data/CUB_190_split/official/CUB_200_2011/'
+# train_dir = data_path + 'train_segmented_imagenet_background_bb_crop_256_augmented/'
+# test_dir = data_path + 'test_segmented_imagenet_background_bb_crop_256/'
+# train_push_dir = data_path + 'train_segmented_imagenet_background_bb_crop_256/'
+# train_batch_size = 80
+# test_batch_size = 100
+# train_push_batch_size = 75 
+# mean = (0.4699, 0.4381, 0.3879)
+# std = (0.1360, 0.1292, 0.1311)
+
+dataset = 'fish'
+data_path = '/fastscratch/harishbabu/data/Fish/phylo-VQVAE/'
+train_dir = data_path + 'train_global_mean_padded_256_augmented/'
+test_dir = data_path + 'test_global_mean_padded_256/'
+train_push_dir = data_path + 'train_global_mean_padded_256/'
+train_batch_size = 80
+test_batch_size = 100
+train_push_batch_size = 75
+mean = (0.7451, 0.7302, 0.6958)
+std = (0.1604, 0.1922, 0.2335)
 
 img_size = 256
 
 # base_architecture = 'resnet18'
-base_architecture = 'vgg19'
+base_architecture = 'vgg19_bn'
 
 if dataset == 'cub':
     if phylo_level == 0:
@@ -52,13 +64,16 @@ else:
     else:
         num_classes = 38
 
-no_of_prototypes = 25
+no_of_prototypes = 10
 
 prototype_shape = (num_classes*no_of_prototypes, 128, 1, 1) # (No. of prototypes, channels, height, width)
 
 prototype_activation_function = 'log'
-add_on_layers_type = 'regular'
+# add_on_layers_type = 'regular'
+add_on_layers_type = 'regular_with_batchnorm'
 
+optimizer_type = 'adam'
+# optimizer_type = 'SGD'
 
 joint_optimizer_lrs = {'features': 1e-4,
                        'add_on_layers': 3e-3,
@@ -77,7 +92,7 @@ coefs = {
     'l1': 1e-4,
 }
 
-num_train_epochs = 20
+num_train_epochs = 11
 num_warm_epochs = 5
 
 push_start = 10
